@@ -1,0 +1,206 @@
+set number
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+filetype on
+filetype indent on
+filetype plugin on
+syntax on
+set autoindent
+set smartindent
+set ambiwidth=double
+set hlsearch
+set clipboard=unnamed,autoselect
+set backspace=indent,eol,start
+set background=dark
+set t_ut=
+set t_Co=256
+colorscheme hybrid
+
+" Anywhere SID.
+function! s:SID_PREFIX()
+  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+endfunction
+
+" Set tabline.
+function! s:my_tabline()  "{{{
+  let s = ''
+  for i in range(1, tabpagenr('$'))
+    let bufnrs = tabpagebuflist(i)
+    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+    let no = i  " display 0-origin tabpagenr.
+    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+    let title = fnamemodify(bufname(bufnr), ':t')
+    let title = title
+    let s .= '%'.i.'T'
+    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+    let s .= no . ':' . title
+    let s .= mod
+    let s .= '%#TabLineFill# '
+  endfor
+  let s .= '%#TabLineFill#%T%=%#TabLine#'
+  return s
+endfunction "}}}
+let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
+set showtabline=2 " 常にタブラインを表示
+
+" The prefix key.
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [Tag]p :tabprevious<CR>
+" tp 前のタブ
+
+
+"--- Plugin
+
+" auto-save
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+
+" lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'],
+      \             ['fugitive', 'readonly'] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&readonly?"🔒 ":""}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left':"",'right':"" },
+      \ 'subseparator': { 'left':"",'right':"" },
+      \ }
+
+set laststatus=2
+if !has('gui_running')
+  set t_Co=256
+endif
+
+" NeoBundle
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+  
+  " Let NeoBundle manage NeoBundle
+  " Required:
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  
+  " My Bundles here:
+  " Refer to |:NeoBundle-examples|.
+  " Note: You don't set neobundle setting in .gvimrc!
+  NeoBundle 'kchmck/vim-coffee-script'
+  
+  NeoBundle 'tpope/vim-capslock'
+  NeoBundle 'mattn/sonictemplate-vim'
+  NeoBundle 'kana/vim-smartinput'
+  NeoBundle 'eagletmt/ghcmod-vim'
+  NeoBundle 'scrooloose/syntastic'
+  NeoBundle 'Shougo/neocomplete.vim'
+  NeoBundle 'Shougo/neosnippet.vim'
+  NeoBundle 'Shougo/neosnippet-snippets'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/vimproc.vim', {
+        \ 'build': {
+        \     'windows': 'tools\\update-dll-mingw',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'linux' : 'make',
+        \     'unix' : 'gmake',
+        \    },
+        \ }
+  NeoBundle 'kana/vim-filetype-haskell'
+  " NeoBundle 'ujihisa/neco-ghc'
+  NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'thinca/vim-ref'
+  NeoBundle 'ujihisa/ref-hoogle'
+  NeoBundle 'ujihisa/unite-haskellimport'
+  NeoBundle 'vim-scripts/vim-auto-save'
+  NeoBundle 'itchyny/lightline.vim'
+  NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'vim-scripts/YankRing.vim'
+  
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_ignore_case = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#max_list = 8
+let g:neocomplete#min_keyword_length = 3
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns._ = '\h\w*'
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" ref-hoogle
+" let g:ref_hoogle_cmd = 'hoogle --info'
+
+" refe
+let g:ref_refe_cmd = $HOME.'/.gem/ruby/2.1.0/gems/refe2-0.9.0/bin/refe'
+
+" Syntastic
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = '--std=c++11 -Wall'
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'mode': 'passive',
+            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'javascript','coffee', 'scss'] }
+
+"--- language
+
+" C++
+augroup cpp
+  au Filetype cpp let g:auto_save = 0
+augroup END
+
+" Haskell
+augroup vimrc
+  au Filetype haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4
+augroup END
+
+" PAS, PASXX
+augroup vimrc
+  au Filetype pasm,pasxx NeoCompleteLock
+augroup END
+
+
+" Scheme
+set lispwords=define-module,define,define-macro,define-syntax,syntax-case,syntax-rules,let1,receive,if,cond,lambda,case
+
+" if 0 | endif
