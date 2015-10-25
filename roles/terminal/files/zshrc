@@ -97,8 +97,6 @@ alias sbcl='rlwrap sbcl'
 export GOPATH=$HOME/.gopath
 export PATH=$PATH:$HOME/.go/bin
 
-eval "$(hub alias -s)"
-
 # Haskell
 export PATH=$HOME/.cabal/bin:$PATH
 
