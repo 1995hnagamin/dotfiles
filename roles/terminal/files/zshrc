@@ -125,6 +125,6 @@ eval "$(thefuck --alias)"
 
 # Ruby
 export GEM_HOME=$HOME/.local/lib/gems
-export PATH=$HOME/.local/lib/gems:$PATH
+export PATH=$HOME/.local/lib/gems/bin:$PATH
 export PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
 
