@@ -18,18 +18,17 @@ set t_ut=
 set t_Co=256
 colorscheme hybrid
 
-" Anywhere SID.
 function! s:SID_PREFIX()
   return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
 endfunction
 
-" Set tabline.
-function! s:my_tabline()  "{{{
+" show tabline
+function! s:my_tabline()
   let s = ''
   for i in range(1, tabpagenr('$'))
     let bufnrs = tabpagebuflist(i)
-    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
-    let no = i  " display 0-origin tabpagenr.
+    let bufnr = bufnrs[tabpagewinnr(i) - 1]
+    let no = i  
     let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
     let title = fnamemodify(bufname(bufnr), ':t')
     let title = title
@@ -41,27 +40,20 @@ function! s:my_tabline()  "{{{
   endfor
   let s .= '%#TabLineFill#%T%=%#TabLine#'
   return s
-endfunction "}}}
+endfunction
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
-set showtabline=2 " 常にタブラインを表示
+set showtabline=2
 
-" The prefix key.
 nnoremap    [Tag]   <Nop>
 nmap    t [Tag]
-" Tab jump
 for n in range(1, 9)
   execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
 endfor
-" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
 
 map <silent> [Tag]c :tablast <bar> tabnew<CR>
-" tc 新しいタブを一番右に作る
 map <silent> [Tag]x :tabclose<CR>
-" tx タブを閉じる
 map <silent> [Tag]n :tabnext<CR>
-" tn 次のタブ
 map <silent> [Tag]p :tabprevious<CR>
-" tp 前のタブ
 
 
 "--- Plugin
@@ -90,14 +82,11 @@ let g:lightline = {
       \ }
 
 set laststatus=2
-if !has('gui_running')
-  set t_Co=256
-endif
 
 " NeoBundle
 if has('vim_starting')
   if &compatible
-    set nocompatible               " Be iMproved
+    set nocompatible
   endif
 
   " Required:
@@ -107,12 +96,9 @@ endif
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
   
-  " Let NeoBundle manage NeoBundle
   " Required:
   NeoBundleFetch 'Shougo/neobundle.vim'
   
-  " My Bundles here:
-  " Refer to |:NeoBundle-examples|.
   " Note: You don't set neobundle setting in .gvimrc!
   NeoBundle 'kchmck/vim-coffee-script'
   
@@ -150,8 +136,6 @@ call neobundle#end()
 " Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
 NeoBundleCheck
 
 " neocomplete
@@ -167,7 +151,6 @@ let g:neocomplete#keyword_patterns._ = '\h\w*'
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " ref-hoogle
 " let g:ref_hoogle_cmd = 'hoogle --info'
@@ -203,4 +186,3 @@ augroup END
 " Scheme
 set lispwords=define-module,define,define-macro,define-syntax,syntax-case,syntax-rules,let1,receive,if,cond,lambda,case
 
-" if 0 | endif
