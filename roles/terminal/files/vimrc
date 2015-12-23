@@ -105,23 +105,17 @@ endif
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
-  
+
   " Required:
   NeoBundleFetch 'Shougo/neobundle.vim'
-  
+
   " Note: You don't set neobundle setting in .gvimrc!
   NeoBundle 'kchmck/vim-coffee-script'
-  
-  NeoBundle 'tpope/vim-capslock'
   NeoBundle 'mattn/sonictemplate-vim'
   NeoBundle 'kana/vim-smartinput'
-  NeoBundle 'eagletmt/ghcmod-vim'
-  " NeoBundle 'scrooloose/syntastic'
-
   NeoBundle 'Shougo/neocomplete.vim'
   NeoBundle 'Shougo/neosnippet.vim'
   NeoBundle 'Shougo/neosnippet-snippets'
-  NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Shougo/vimproc.vim', {
         \ 'build': {
         \     'windows': 'tools\\update-dll-mingw',
@@ -132,27 +126,17 @@ call neobundle#begin(expand('~/.vim/bundle/'))
         \    },
         \ }
   NeoBundle 'kana/vim-filetype-haskell'
-  " NeoBundle 'ujihisa/neco-ghc'
   NeoBundle 'thinca/vim-quickrun'
-  NeoBundle 'thinca/vim-ref'
-  NeoBundle 'ujihisa/ref-hoogle'
-  NeoBundle 'ujihisa/unite-haskellimport'
   NeoBundle 'vim-scripts/vim-auto-save'
   NeoBundle 'itchyny/lightline.vim'
   NeoBundle 'tpope/vim-fugitive'
-  " NeoBundle 'vim-scripts/YankRing.vim'
+  NeoBundle 'vim-scripts/YankRing.vim'
   NeoBundle 'osyo-manga/shabadou.vim'
   NeoBundle 'osyo-manga/vim-watchdogs'
   NeoBundle 'lervag/vim-latex'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'vim-scripts/Gundo'
-  NeoBundle 'kana/vim-textobj-entire'
-  NeoBundle 'kana/vim-operator-user'
-  NeoBundle 'kana/vim-textobj-user'
-  NeoBundle 'kana/vim-operator-replace'
-  NeoBundle 'glts/vim-textobj-comment'
-  NeoBundle 'emonkak/vim-operator-comment'
-  
+
 call neobundle#end()
 
 " Required:
@@ -214,28 +198,8 @@ let g:quickrun_config['tex'] = {
             \   'exec': ['%c %o %s']
             \ }
 
-" ref-hoogle
-" let g:ref_hoogle_cmd = 'hoogle --info'
-
-" refe
-let g:ref_refe_cmd = $HOME.'/.gem/ruby/2.1.0/gems/refe2-0.9.0/bin/refe'
-
-" Syntastic
-" let g:syntastic_cpp_compiler = 'g++'
-" let g:syntastic_cpp_compiler_options = '--std=c++11 -Wall'
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_mode_map = { 'mode': 'passive',
-"             \ 'active_filetypes': ['c', 'cpp', 'ruby', 'javascript','coffee', 'scss'] }
-
-" vim-operator-comment
-map co <Plug>(operator-comment)
-map cO <Plug>(operator-uncomment)
-
 " unite.vim
 let g:unite_enable_start_insert=1
-
-" vim-textobj-replace
-nmap R <Plug>(operator-replace)
 
 " watchdogs.vim
 call watchdogs#setup(g:quickrun_config)
