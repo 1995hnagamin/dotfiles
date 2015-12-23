@@ -17,3 +17,5 @@
 	insteadOf = ssh://git@github.com/ghc/packages/
 [url "git@github.com:/ghc/packages-"]
 	insteadOf = git@github.com:/ghc/packages/
+[init]
+	templatedir = ~/.git_tmp
