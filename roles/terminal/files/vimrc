@@ -79,15 +79,13 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly'] ]
+      \             ['readonly'] ]
       \ },
       \ 'component': {
-      \   'readonly': '%{&readonly?"🔒 ":""}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \   'readonly': '%{&readonly?"RO":""}',
       \ },
       \ 'component_visible_condition': {
       \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ },
       \ 'separator': { 'left':"",'right':"" },
       \ 'subseparator': { 'left':"",'right':"" },
