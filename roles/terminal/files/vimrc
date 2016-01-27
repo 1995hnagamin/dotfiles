@@ -21,6 +21,7 @@ set t_ut=
 set t_Co=256
 colorscheme molokai
 highlight Normal ctermbg=none
+set autoread
 
 set undodir=$HOME/.vim/undodir
 set undofile
