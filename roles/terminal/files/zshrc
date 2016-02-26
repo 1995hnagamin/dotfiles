@@ -105,7 +105,6 @@ export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # OCaml
-eval `opam config env`
 
 # Perl
 PATH="/home/ciconia/perl5/bin${PATH+:}${PATH}"; export PATH;
@@ -121,8 +120,6 @@ if [ -d "${PYENV_ROOT}" ]; then
   eval "$(pyenv init -)"
 fi
 PATH=~/.local/bin:$PATH
-
-eval "$(thefuck --alias)"
 
 # Ruby
 export GEM_HOME=$HOME/.local/lib/gems
