@@ -1,5 +1,7 @@
 # zsh
-PROMPT='[%n@%c] '
+autoload colors
+colors
+PROMPT='%{$fg[green]%}[%c@${HOST}]%{$reset_color%} '
 
 HISTSIZE=5000
 SAVEHIST=50000
@@ -15,15 +17,16 @@ alias g11='g++ --std=c++11 -Wall -O2'
 alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
 alias rm=gomi
-alias vim='vim -p -w ~/.vimlog'
+alias vim='vim -p'
 
 autoload -U compinit && compinit
-export TERM=xterm-256color
+export TERM=screen-256color
 
 case "$TERM" in
   "screen" ) export LANG=ja_JP.utf8 ;;
   "xterm"  ) export LANG=ja_JP.utf8 ;;
   "xterm-256color"  ) export LANG=ja_JP.utf8 ;;
+  "screen-256color"  ) export LANG=ja_JP.utf8 ;;
   "linux"  ) export LANG=C ;;
   * ) export LANG=C ;;
 esac
