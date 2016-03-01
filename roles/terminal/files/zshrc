@@ -15,7 +15,7 @@ alias g11='g++ --std=c++11 -Wall -O2'
 alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
 alias rm=gomi
-alias vim='vim -p -w ~/.vimlog'
+alias vim='vim -p'
 
 autoload -U compinit && compinit
 export TERM=xterm-256color
@@ -105,7 +105,6 @@ export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # OCaml
-eval `opam config env`
 
 # Perl
 PATH="/home/ciconia/perl5/bin${PATH+:}${PATH}"; export PATH;
@@ -121,8 +120,6 @@ if [ -d "${PYENV_ROOT}" ]; then
   eval "$(pyenv init -)"
 fi
 PATH=~/.local/bin:$PATH
-
-eval "$(thefuck --alias)"
 
 # Ruby
 export GEM_HOME=$HOME/.local/lib/gems

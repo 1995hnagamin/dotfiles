@@ -16,7 +16,7 @@ let g:plugin_loader_plugins = "_libly,statusbar_panel,feedSomeKeys_3,caret-hint,
 
 set incsearch
 set hlsearch
-set toolbars=none,tabs
+set toolbars=none,navigation
 set hintchars=0123456789abcdeghijklmnopqrstuvwxyz
 set editor="~/.local/bin/gvim -f"
 set titlestring=Firefox

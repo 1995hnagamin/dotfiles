@@ -21,6 +21,7 @@ set t_ut=
 set t_Co=256
 colorscheme molokai
 highlight Normal ctermbg=none
+set autoread
 
 set undodir=$HOME/.vim/undodir
 set undofile
@@ -135,6 +136,11 @@ NeoBundle 'osyo-manga/vim-watchdogs'
 NeoBundle 'lervag/vim-latex'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-scripts/Gundo'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'dannyob/quickfixstatus'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'Shougo/unite.vim'
 
 call neobundle#end()
 
