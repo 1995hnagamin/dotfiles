@@ -23,6 +23,7 @@ colorscheme molokai
 highlight Normal ctermbg=none
 set updatetime=1000
 set nofixeol
+set autoread
 
 set undodir=$HOME/.vim/undodir
 set undofile
@@ -142,19 +143,15 @@ NeoBundle 'osyo-manga/shabadou.vim'
 NeoBundle 'osyo-manga/vim-watchdogs'
 NeoBundle 'lervag/vim-latex'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'vim-scripts/Gundo', {
-      \   'autoload': {'commands': ['GundoToggle']}
-      \ }
-NeoBundleLazy 'Shougo/unite.vim', {
-      \   'autoload': {'commands': ['Unite']}
-      \ }
 NeoBundle 'fcitx.vim'
 NeoBundle 'wikipedia.vim'
 NeoBundle 'mru.vim'
-NeoBundle "jceb/vim-hier"
-NeoBundle "dannyob/quickfixstatus"
-NeoBundle "airblade/vim-gitgutter"
-NeoBundle "Shougo/unite-outline"
+NeoBundle 'vim-scripts/Gundo'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'dannyob/quickfixstatus'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'Shougo/unite.vim'
 
 call neobundle#end()
 
