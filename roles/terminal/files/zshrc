@@ -1,7 +1,7 @@
 # zsh
-autoload colors
+autoload -Uz colors
 colors
-PROMPT='%{$fg[green]%}[%c@${HOST}]%{$reset_color%} '
+PROMPT='%F{green}[%c@%m]%f '
 
 HISTSIZE=5000
 SAVEHIST=50000
