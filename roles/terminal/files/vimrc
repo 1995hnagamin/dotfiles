@@ -149,7 +149,7 @@ NeoBundle 'mru.vim'
 NeoBundle 'vim-scripts/Gundo'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'dannyob/quickfixstatus'
-NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'Shougo/unite-outline'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'Shougo/unite.vim'
 
