@@ -206,7 +206,7 @@ let g:quickrun_config = {
       \       "hook/cd/directory" : "D:/test/aaa",
       \   },
       \   "watchdogs_checker/_": {
-      \       "hook/close_quickfix/enable_exit" : 1,
+      \       "outputter/quickfix/open_cmd": "",
       \   },
       \}
 
