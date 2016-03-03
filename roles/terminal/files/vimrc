@@ -150,7 +150,7 @@ NeoBundle 'vim-scripts/Gundo'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'jceb/vim-hier'
+NeoBundle 'cohama/vim-hier'
 NeoBundle 'Shougo/unite.vim'
 
 call neobundle#end()
