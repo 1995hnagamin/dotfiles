@@ -6,7 +6,7 @@
 	email = 1995.hnagamin@gmail.com
 
 [push]
-	default = simple
+	default = upstream
 [url "git://github.com/ghc/packages-"]
 	insteadOf = git://github.com/ghc/packages/
 [url "http://github.com/ghc/packages-"]
