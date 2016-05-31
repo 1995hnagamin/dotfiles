@@ -90,7 +90,6 @@ function tmux_automatically_attach_session()
         fi
     fi
 }
-tmux_automatically_attach_session
 
 # Common Lisp
 alias sbcl='rlwrap sbcl'

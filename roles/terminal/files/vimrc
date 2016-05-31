@@ -22,7 +22,6 @@ set t_Co=256
 colorscheme molokai
 highlight Normal ctermbg=none
 set updatetime=1000
-set nofixeol
 set autoread
 
 set undodir=$HOME/.vim/undodir
