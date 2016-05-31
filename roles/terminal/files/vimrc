@@ -149,6 +149,7 @@ NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'cohama/vim-hier'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Konfekt/FastFold'
 
 call neobundle#end()
 
