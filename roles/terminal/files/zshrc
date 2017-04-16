@@ -16,7 +16,6 @@ alias ls='ls --color'
 alias g11='g++ --std=c++11 -Wall -O2'
 alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
-alias rm=gomi
 alias vim='vim -p'
 
 autoload -U compinit && compinit
