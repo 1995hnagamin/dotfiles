@@ -7,16 +7,16 @@ HISTSIZE=5000
 SAVEHIST=50000
 HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S'
 HISTFILE=${HOME}/.zsh_history
-PATH=$HOME/local/bin:$PATH
+PATH=$HOME/local/bin:$HOME/local/bin2:$PATH
 setopt EXTENDED_HISTORY
 setopt hist_no_store
 setopt hist_reduce_blanks
+setopt share_history
 
 alias ls='ls --color'
 alias g11='g++ --std=c++11 -Wall -O2'
 alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
-alias rm=gomi
 alias vim='vim -p'
 
 autoload -U compinit && compinit
@@ -109,11 +109,11 @@ export NVM_DIR=$HOME/.nvm
 # OCaml
 
 # Perl
-PATH="/home/ciconia/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/ciconia/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/ciconia/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/ciconia/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/ciconia/perl5"; export PERL_MM_OPT;
+PATH="$HOME/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # python
 export PYENV_ROOT="${HOME}/.pyenv"
