@@ -75,47 +75,69 @@ let g:auto_save = 1
 let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
 
-" dein.vim
-
+"dein Scripts-----------------------------
 if &compatible
-    set nocompatible
-  endif
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+  set nocompatible               " Be iMproved
+endif
 
-call dein#begin(expand('~/.vim/dein'))
+" Required:
+set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
 
-call dein#add('kchmck/vim-coffee-script')
-call dein#add('mattn/sonictemplate-vim')
-call dein#add('kana/vim-smartinput')
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neosnippet.vim')
-" call dein#add('Shougo/neosnippet-snippets')
-" call dein#add('Shougo/vimproc.vim' { 'build': 'make' })
-call dein#add('kana/vim-filetype-haskell')
-call dein#add('thinca/vim-quickrun')
-call dein#add('vim-scripts/vim-auto-save')
-call dein#add('itchyny/lightline.vim')
-call dein#add('tpope/vim-fugitive')
-call dein#add('LeafCage/yankround.vim')
-call dein#add('osyo-manga/shabadou.vim')
-"NeoBundle 'osyo-manga/vim-watchdogs'
-call dein#add('lervag/vim-latex')
-call dein#add('tpope/vim-surround')
-call dein#add('fcitx.vim')
-call dein#add('wikipedia.vim')
-call dein#add('mru.vim')
-call dein#add('vim-scripts/Gundo')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('dannyob/quickfixstatus')
-call dein#add('Shougo/unite-outline')
-call dein#add('cohama/vim-hier')
-call dein#add('Shougo/unite.vim')
-call dein#add('Konfekt/FastFold')
-call dein#add('mattn/emmet-vim')
-call dein#add('tyru/skk.vim')
-" NeoBundle 'justmao945/vim-clang'
+" Required:
+if dein#load_state('~/.local/share/dein')
+  call dein#begin('~/.local/share/dein')
 
-call dein#end()
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('kchmck/vim-coffee-script')
+  call dein#add('mattn/sonictemplate-vim')
+  call dein#add('kana/vim-smartinput')
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Shougo/neosnippet.vim')
+  " call dein#add('Shougo/neosnippet-snippets')
+  " call dein#add('Shougo/vimproc.vim' { 'build': 'make' })
+  call dein#add('kana/vim-filetype-haskell')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('vim-scripts/vim-auto-save')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('LeafCage/yankround.vim')
+  call dein#add('osyo-manga/shabadou.vim')
+  "NeoBundle 'osyo-manga/vim-watchdogs'
+  call dein#add('lervag/vim-latex')
+  call dein#add('tpope/vim-surround')
+  call dein#add('fcitx.vim')
+  call dein#add('wikipedia.vim')
+  call dein#add('mru.vim')
+  call dein#add('vim-scripts/Gundo')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('dannyob/quickfixstatus')
+  call dein#add('Shougo/unite-outline')
+  call dein#add('cohama/vim-hier')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Konfekt/FastFold')
+  call dein#add('mattn/emmet-vim')
+  call dein#add('tyru/skk.vim')
+  " NeoBundle 'justmao945/vim-clang'
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
 
 " fugitive
 command! Commit :Gcommit -v
