@@ -11,6 +11,9 @@
 [init]
 	templatedir = ~/.git_tmp
 
+[pager]
+  grep = false
+
 [commit]
 	verbose = true
 
