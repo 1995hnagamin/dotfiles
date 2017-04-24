@@ -1,3 +1,2 @@
 ---
 - action: copy src=vimrc dest=~/.vimrc mode=0644
-- action: copy src=vimperatorrc dest=~/.vimperatorrc mode=0644
