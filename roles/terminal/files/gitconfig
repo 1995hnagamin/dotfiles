@@ -10,3 +10,6 @@
 
 [init]
 	templatedir = ~/.git_tmp
+
+[diff]
+	algorithm = histogram
