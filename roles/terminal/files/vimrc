@@ -39,3 +39,8 @@ call dein#add('itchyny/lightline.vim')
 call dein#end()
 
 syntax on
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+set laststatus=2
