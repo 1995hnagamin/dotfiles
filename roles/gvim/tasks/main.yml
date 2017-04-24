@@ -1,0 +1,5 @@
+---
+- name: install gvimrc
+  copy:
+    src: gvimrc
+    dest: ~/.gvimrc

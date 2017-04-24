@@ -1,9 +1,0 @@
----
-- action: copy src=tmux.conf dest=~/.tmux.conf mode=0644
-- action: copy src=zshrc dest=~/.zshrc mode=0644
-- action: copy src=vimrc dest=~/.vimrc mode=0644
-- action: copy src=gvimrc dest=~/.gvimrc mode=0644
-- action: copy src=gitconfig dest=~/.gitconfig mode=0644
-- action: copy src=git_tmp/ dest=~/.git_tmp  mode=0744
-- action: copy src=vimperatorrc dest=~/.vimperatorrc mode=0644
-- action: copy src=latexmkrc dest=~/.latexmkrc mode=0644
