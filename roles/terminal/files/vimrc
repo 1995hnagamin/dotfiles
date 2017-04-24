@@ -136,7 +136,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'osyo-manga/shabadou.vim'
-NeoBundle 'osyo-manga/vim-watchdogs'
+"NeoBundle 'osyo-manga/vim-watchdogs'
 NeoBundle 'lervag/vim-latex'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'fcitx.vim'
@@ -149,6 +149,9 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'cohama/vim-hier'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Konfekt/FastFold'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'tyru/skk.vim'
+" NeoBundle 'justmao945/vim-clang'
 
 call neobundle#end()
 
@@ -212,6 +215,15 @@ let g:quickrun_config['tex'] = {
       \   'exec': ['%c %o %s']
       \ }
 
+" skk.vim
+let skk_jisyo = '~/.skk-jisyo'
+let skk_large_jisyo = '/usr/share/skk/SKK-JISYO.L'
+let skk_auto_save_jisyo = 1
+let skk_keep_state = 1
+let skk_egg_like_newline = 1
+let skk_show_annotation = 1
+let skk_use_face = 1
+
 " unite.vim
 let g:unite_enable_start_insert=1
 
@@ -227,7 +239,7 @@ let g:quickrun_config['cpp/watchdogs_checker'] = {
       \   'cmdopt' : '-std=c++14',
       \ }
 
-call watchdogs#setup(g:quickrun_config)
+"call watchdogs#setup(g:quickrun_config)
 let g:watchdogs_check_CursorHold_enable = 1
 
 " yankround.vim
