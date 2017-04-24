@@ -1,5 +1,4 @@
 ---
-- action: copy src=tmux.conf dest=~/.tmux.conf mode=0644
 - action: copy src=vimrc dest=~/.vimrc mode=0644
 - action: copy src=gvimrc dest=~/.gvimrc mode=0644
 - action: copy src=gitconfig dest=~/.gitconfig mode=0644
