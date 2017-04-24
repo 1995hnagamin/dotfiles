@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    ansible_python_interpreter: /usr/bin/python2
+  roles:
+    - git
+    - gvim
+    - latexmk
+    - tmux
+    - vim
+    - zsh
