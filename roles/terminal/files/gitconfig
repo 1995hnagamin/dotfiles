@@ -11,5 +11,8 @@
 [init]
 	templatedir = ~/.git_tmp
 
+[commit]
+	verbose = true
+
 [diff]
 	algorithm = histogram
