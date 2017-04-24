@@ -31,7 +31,10 @@ call dein#begin(expand('~/.vim/dein'))
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
+call dein#add('rust-lang/rust.vim')
 call dein#add('tyru/skk.vim')
+call dein#add('bronson/vim-trailing-whitespace')
+call dein#add('itchyny/lightline.vim')
 
 call dein#end()
 
