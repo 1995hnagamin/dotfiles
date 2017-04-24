@@ -75,6 +75,48 @@ let g:auto_save = 1
 let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
 
+" dein.vim
+
+if &compatible
+    set nocompatible
+  endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+call dein#begin(expand('~/.vim/dein'))
+
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('mattn/sonictemplate-vim')
+call dein#add('kana/vim-smartinput')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neosnippet.vim')
+" call dein#add('Shougo/neosnippet-snippets')
+" call dein#add('Shougo/vimproc.vim' { 'build': 'make' })
+call dein#add('kana/vim-filetype-haskell')
+call dein#add('thinca/vim-quickrun')
+call dein#add('vim-scripts/vim-auto-save')
+call dein#add('itchyny/lightline.vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('LeafCage/yankround.vim')
+call dein#add('osyo-manga/shabadou.vim')
+"NeoBundle 'osyo-manga/vim-watchdogs'
+call dein#add('lervag/vim-latex')
+call dein#add('tpope/vim-surround')
+call dein#add('fcitx.vim')
+call dein#add('wikipedia.vim')
+call dein#add('mru.vim')
+call dein#add('vim-scripts/Gundo')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('dannyob/quickfixstatus')
+call dein#add('Shougo/unite-outline')
+call dein#add('cohama/vim-hier')
+call dein#add('Shougo/unite.vim')
+call dein#add('Konfekt/FastFold')
+call dein#add('mattn/emmet-vim')
+call dein#add('tyru/skk.vim')
+" NeoBundle 'justmao945/vim-clang'
+
+call dein#end()
+
 " fugitive
 command! Commit :Gcommit -v
 command! Diff :Gvdiff
@@ -100,65 +142,6 @@ let g:lightline = {
       \ }
 
 set laststatus=2
-
-" NeoBundle
-if has('vim_starting')
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundleLazy 'kchmck/vim-coffee-script'
-NeoBundle 'mattn/sonictemplate-vim'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build': {
-      \     'windows': 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'linux' : 'make',
-      \     'unix' : 'gmake',
-      \    },
-      \ }
-NeoBundle 'kana/vim-filetype-haskell'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'vim-scripts/vim-auto-save'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'LeafCage/yankround.vim'
-NeoBundle 'osyo-manga/shabadou.vim'
-"NeoBundle 'osyo-manga/vim-watchdogs'
-NeoBundle 'lervag/vim-latex'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'fcitx.vim'
-NeoBundle 'wikipedia.vim'
-NeoBundle 'mru.vim'
-NeoBundle 'vim-scripts/Gundo'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'dannyob/quickfixstatus'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'cohama/vim-hier'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Konfekt/FastFold'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tyru/skk.vim'
-" NeoBundle 'justmao945/vim-clang'
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-NeoBundleCheck
 
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
