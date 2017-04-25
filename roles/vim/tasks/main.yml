@@ -1,0 +1,5 @@
+---
+- name: install vimrc
+  copy:
+    src: vimrc
+    dest: ~/.vimrc
