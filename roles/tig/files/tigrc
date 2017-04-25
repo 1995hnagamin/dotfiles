@@ -1,0 +1,9 @@
+set commit-order = date
+set main-view = id date:short author:width=3 commit-title:graph=yes,refs=yes
+set tab-size = 2
+set ignore-space = all
+
+bind generic H view-help
+bind generic g move-first-line
+bind generic G none
+bind generic G move-last-line
