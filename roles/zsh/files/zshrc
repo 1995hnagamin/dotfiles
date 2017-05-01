@@ -22,14 +22,6 @@ alias vim='vim -p'
 autoload -U compinit && compinit
 export TERM=screen-256color
 
-case "$TERM" in
-  "screen" ) export LANG=ja_JP.utf8 ;;
-  "xterm"  ) export LANG=ja_JP.utf8 ;;
-  "xterm-256color"  ) export LANG=ja_JP.utf8 ;;
-  "screen-256color"  ) export LANG=ja_JP.utf8 ;;
-  "linux"  ) export LANG=C ;;
-  * ) export LANG=C ;;
-esac
 
 # tmux 
 ## start tmux on startup of zsh
