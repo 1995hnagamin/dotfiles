@@ -13,7 +13,6 @@ setopt hist_no_store
 setopt hist_reduce_blanks
 setopt share_history
 
-alias ls='ls --color'
 alias g11='g++ --std=c++11 -Wall -O2'
 alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
