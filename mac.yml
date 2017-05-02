@@ -8,6 +8,7 @@
     - git
     - gvim
     - latexmk
+    - sonictemplate
     - tmux
     - vim
     - zsh
