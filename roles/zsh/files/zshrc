@@ -87,10 +87,8 @@ function tmux_automatically_attach_session()
 alias sbcl='rlwrap sbcl'
 
 # Go (golang)
-# export GOROOT=$HOME/.go
-# export GOBIN=$GOROOT/bin
-export GOPATH=$HOME/.gopath
-export PATH=$PATH:$HOME/.go/bin:$GOPATH/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 # Haskell
 export PATH=$HOME/.cabal/bin:$PATH
