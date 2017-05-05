@@ -7,12 +7,12 @@ HISTSIZE=5000
 SAVEHIST=50000
 HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S'
 HISTFILE=${HOME}/.zsh_history
-PATH=$HOME/local/bin:$PATH
+PATH=$HOME/local/bin:$HOME/local/bin2:$PATH
 setopt EXTENDED_HISTORY
 setopt hist_no_store
 setopt hist_reduce_blanks
+setopt share_history
 
-alias ls='ls --color'
 alias g11='g++ --std=c++11 -Wall -O2'
 alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
@@ -21,14 +21,8 @@ alias vim='vim -p'
 autoload -U compinit && compinit
 export TERM=screen-256color
 
-case "$TERM" in
-  "screen" ) export LANG=ja_JP.utf8 ;;
-  "xterm"  ) export LANG=ja_JP.utf8 ;;
-  "xterm-256color"  ) export LANG=ja_JP.utf8 ;;
-  "screen-256color"  ) export LANG=ja_JP.utf8 ;;
-  "linux"  ) export LANG=C ;;
-  * ) export LANG=C ;;
-esac
+# homebrew
+export HOMEBREW_NO_ANALYTICS=1
 
 # tmux 
 ## start tmux on startup of zsh
