@@ -27,8 +27,6 @@ export HOMEBREW_NO_ANALYTICS=1
 alias sbcl='rlwrap sbcl'
 
 # Go (golang)
-# export GOROOT=$HOME/.go
-# export GOBIN=$GOROOT/bin
 export GOPATH=$HOME/.gopath
 export PATH=$PATH:$HOME/.go/bin:$GOPATH/bin
 
