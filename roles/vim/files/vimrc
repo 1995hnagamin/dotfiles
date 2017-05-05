@@ -13,7 +13,6 @@ set ambiwidth=double
 set hlsearch
 set undofile
 set splitright
-set clipboard=unnamedplus,autoselect
 set backspace=indent,eol,start
 set background=dark
 set foldmethod=marker

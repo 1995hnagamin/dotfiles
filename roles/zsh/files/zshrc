@@ -1,0 +1,43 @@
+# zsh
+autoload -Uz colors
+colors
+PROMPT='%F{green}[%c@%m]%f '
+
+HISTSIZE=5000
+SAVEHIST=50000
+HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S'
+HISTFILE=${HOME}/.zsh_history
+PATH=$HOME/.local/bin:$HOME/local/bin:$HOME/local/bin2:$PATH
+setopt EXTENDED_HISTORY
+setopt hist_no_store
+setopt hist_reduce_blanks
+setopt share_history
+
+alias g11='g++ --std=c++11 -Wall -O2'
+alias gosh='rlwrap gosh'
+alias ocaml='rlwrap ocaml'
+
+autoload -U compinit && compinit
+export TERM=screen-256color
+
+# homebrew
+export HOMEBREW_NO_ANALYTICS=1
+
+# Common Lisp
+alias sbcl='rlwrap sbcl'
+
+# Go (golang)
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Haskell
+export PATH=$HOME/.cabal/bin:$PATH
+
+# Node
+export NVM_DIR=$HOME/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+source ~/.zshrc.local
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

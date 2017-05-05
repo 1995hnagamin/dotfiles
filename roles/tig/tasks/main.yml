@@ -1,0 +1,5 @@
+---
+- name: install tigrc
+  copy:
+    src: tigrc
+    dest: ~/.tigrc
