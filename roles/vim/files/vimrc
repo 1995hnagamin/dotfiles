@@ -13,7 +13,6 @@ set ambiwidth=double
 set hlsearch
 set undofile
 set splitright
-set clipboard=unnamedplus,autoselect
 set backspace=indent,eol,start
 set background=dark
 set foldmethod=marker
@@ -224,6 +223,11 @@ let skk_keep_state = 1
 let skk_egg_like_newline = 1
 let skk_show_annotation = 1
 let skk_use_face = 1
+
+" sonictemplate-vim
+let g:sonictemplate_vim_template_dir = [
+      \ '~/.vim/sonictemplate'
+      \]
 
 " unite.vim
 let g:unite_enable_start_insert=1

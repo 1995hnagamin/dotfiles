@@ -3,9 +3,8 @@
   connection: local
   vars:
     ansible_python_interpreter: /usr/bin/python2
-    email: 1995.hnagamin@gmail.com
+    email: hnagamin@trans-nt.com
   roles:
     - git
-    - tmux
     - vim
     - zsh

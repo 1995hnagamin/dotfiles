@@ -1,7 +1,7 @@
 ---
 - name: install gitconfig
-  copy:
-    src: gitconfig
+  template:
+    src: gitconfig.j2
     dest: ~/.gitconfig
 - name: install git_tmp
   copy:

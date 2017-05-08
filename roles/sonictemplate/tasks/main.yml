@@ -1,0 +1,5 @@
+---
+- name: install sonictemplate files
+  copy:
+    src: sonictemplate
+    dest: ~/.vim/
