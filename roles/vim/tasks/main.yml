@@ -3,3 +3,7 @@
   copy:
     src: vimrc
     dest: ~/.vimrc
+- name: install ftplugin
+  copy:
+    src: ftplugin
+    dest:  ~/.vim/
