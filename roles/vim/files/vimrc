@@ -18,6 +18,8 @@ colorscheme molokai
 highlight Normal ctermbg=none
 set updatetime=1000
 set autoread
+set list
+set listchars=eol:~,tab:._,trail:#,extends:>,precedes:<,nbsp:]
 
 set undodir=$HOME/.vim/undodir
 set undofile
