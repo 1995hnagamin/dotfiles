@@ -115,6 +115,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: You don't set neobundle setting in .gvimrc!
 NeoBundleLazy 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/sonictemplate-vim'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
