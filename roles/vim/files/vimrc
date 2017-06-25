@@ -65,6 +65,8 @@ map <silent> [Tag]x :tabclose<CR>
 map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 
+command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
+
 "--- Plugin
 
 " auto-save
