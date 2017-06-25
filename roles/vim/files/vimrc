@@ -16,255 +16,30 @@ set splitright
 set backspace=indent,eol,start
 set background=dark
 set foldmethod=marker
-set t_ut=
-set t_Co=256
-colorscheme molokai
 highlight Normal ctermbg=none
 set updatetime=1000
 set autoread
+colorscheme elflord
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-set undodir=$HOME/.vim/undodir
-set undofile
+call dein#begin(expand('~/.vim/dein'))
 
-nnoremap <C-@> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-nnoremap <ESC><ESC> :noh<CR>
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-function! s:SID_PREFIX()
-  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
-endfunction
+call dein#add('rust-lang/rust.vim')
+call dein#add('tyru/skk.vim')
+call dein#add('bronson/vim-trailing-whitespace')
+call dein#add('itchyny/lightline.vim')
 
-" show tabline
-function! s:my_tabline()
-  let s = ''
-  for i in range(1, tabpagenr('$'))
-    let bufnrs = tabpagebuflist(i)
-    let bufnr = bufnrs[tabpagewinnr(i) - 1]
-    let no = i
-    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
-    let title = fnamemodify(bufname(bufnr), ':t')
-    let title = title
-    let s .= '%'.i.'T'
-    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
-    let s .= no . ':' . title
-    let s .= mod
-    let s .= '%#TabLineFill# '
-  endfor
-  let s .= '%#TabLineFill#%T%=%#TabLine#'
-  return s
-endfunction
-let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
-set showtabline=2
+call dein#end()
 
-nnoremap    [Tag]   <Nop>
-nmap    , [Tag]
-for n in range(1, 9)
-  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
-endfor
+syntax on
 
-map <silent> [Tag]c :tablast <bar> tabnew<CR>
-map <silent> [Tag]x :tabclose<CR>
-map <silent> [Tag]n :tabnext<CR>
-map <silent> [Tag]p :tabprevious<CR>
-
-"--- Plugin
-
-" auto-save
-let g:auto_save = 1
-let g:auto_save_no_updatetime = 1
-let g:auto_save_in_insert_mode = 0
-
-" fugitive
-command! Commit :Gcommit -v
-command! Diff :Gvdiff
-
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
-
-" lightline
 let g:lightline = {
       \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'],
-      \             ['readonly'] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&readonly?"RO":""}',
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \ },
-      \ 'separator': { 'left':'','right':'' },
-      \ 'subseparator': { 'left':'','right':'' },
       \ }
-
 set laststatus=2
-
-" NeoBundle
-if has('vim_starting')
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundleLazy 'kchmck/vim-coffee-script'
-NeoBundle 'mattn/sonictemplate-vim'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build': {
-      \     'windows': 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'linux' : 'make',
-      \     'unix' : 'gmake',
-      \    },
-      \ }
-NeoBundle 'kana/vim-filetype-haskell'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'vim-scripts/vim-auto-save'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'LeafCage/yankround.vim'
-NeoBundle 'osyo-manga/shabadou.vim'
-NeoBundle 'osyo-manga/vim-watchdogs'
-NeoBundle 'lervag/vim-latex'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'fcitx.vim'
-NeoBundle 'wikipedia.vim'
-NeoBundle 'mru.vim'
-NeoBundle 'vim-scripts/Gundo'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'dannyob/quickfixstatus'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'cohama/vim-hier'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Konfekt/FastFold'
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-NeoBundleCheck
-
-" neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_ignore_case = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#max_list = 8
-let g:neocomplete#min_keyword_length = 3
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns._ = '\h\w*'
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.tex = '\\ref{\s*[0-9A-Za-z_:]*'
-
-" neosnippet
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-" quickrun.vim
-
-let g:quickrun_config = {
-      \   'make' : {
-      \       'command'   : 'mingw32-make',
-      \       'exec' : '%c %o',
-      \       'outputter' : 'error:buffer:quickfix',
-      \       'runner' : 'vimproc',
-      \       'hook/cd/enable' : 1,
-      \       'hook/cd/directory' : 'D:/test/aaa',
-      \   },
-      \}
-
-let g:quickrun_config['tex'] = {
-      \   'command' : 'latexmk',
-      \   'outputter' : 'error',
-      \   'outputter/error/error' : 'quickfix',
-      \   'cmdopt': '-pdfdvi',
-      \   'exec': ['%c %o %s']
-      \ }
-
-" sonictemplate-vim
-let g:sonictemplate_vim_template_dir = [
-      \ '~/.vim/sonictemplate'
-      \]
-
-" unite.vim
-let g:unite_enable_start_insert=1
-
-" watchdogs.vim
-let g:quickrun_config['watchdogs_checker/_'] = {
-      \   'outputter/quickfix/open_cmd': '',
-      \   'hook/echo/enable': 1,
-      \   'hook/echo/output_success': 'Watchdog went away.'
-      \ }
-
-let g:quickrun_config['cpp/watchdogs_checker'] = {
-      \   'type' : 'watchdogs_checker/clang++',
-      \   'cmdopt' : '-std=c++14',
-      \ }
-
-call watchdogs#setup(g:quickrun_config)
-let g:watchdogs_check_CursorHold_enable = 1
-
-" yankround.vim
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap yp <Plug>(yankround-prev)
-nmap yn <Plug>(yankround-next)
-command! YankHistory :Unite yankround
-"--- language
-
-" C++
-
-" PAS, PASXX
-augroup FiletypePASXX
-  au Filetype pasm,pasxx NeoCompleteLock
-augroup END
-
-" Scheme
-set lispwords=define-module,define,define-macro,define-syntax,syntax-case,syntax-rules,let1,receive,if,cond,lambda,case
-
-" TeX
-let g:tex_conceal=''
-
-augroup HighlightTrailingSpaces
-  autocmd!
-  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+\n./
-augroup END
-
-if filereadable(expand('~/.vimrc.local'))
-  source ~/.vimrc.local
-endif
