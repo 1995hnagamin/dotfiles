@@ -14,6 +14,7 @@ set backspace=indent,eol,start
 set foldmethod=marker
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight ErrorMsg ctermbg=none
+autocmd ColorScheme * highlight WarningMsg ctermbg=none
 set updatetime=1000
 set autoread
 set list
