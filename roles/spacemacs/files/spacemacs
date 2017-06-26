@@ -3,7 +3,7 @@
 ;; It must be stored in your home directory.
 
 (when (eq system-type 'darwin)
-    (setq ns-command-modifier (quote meta)))
+  (setq ns-command-modifier (quote meta)))
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
