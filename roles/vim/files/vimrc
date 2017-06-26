@@ -103,11 +103,9 @@ call dein#add('thinca/vim-quickrun')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-surround')
 call dein#add('tyru/skk.vim')
-call dein#add('vim-scripts/fcitx.vim')
 call dein#add('vim-scripts/Gundo')
 call dein#add('vim-scripts/mru.vim')
 call dein#add('vim-scripts/vim-auto-save')
-call dein#add('vim-scripts/wikipedia.vim')
 
 " Required:
 call dein#end()
