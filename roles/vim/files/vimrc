@@ -75,25 +75,18 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
 set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
 if dein#load_state('~/.local/share/dein')
 call dein#begin('~/.local/share/dein')
 
-" Let dein manage dein
-" Required:
 call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
-" Add or remove your plugins here:
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('mattn/sonictemplate-vim')
 call dein#add('kana/vim-smartinput')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neosnippet.vim')
-" call dein#add('Shougo/neosnippet-snippets')
-" call dein#add('Shougo/vimproc.vim' { 'build': 'make' })
 call dein#add('kana/vim-filetype-haskell')
 call dein#add('thinca/vim-quickrun')
 call dein#add('vim-scripts/vim-auto-save')
@@ -101,7 +94,6 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('LeafCage/yankround.vim')
 call dein#add('osyo-manga/shabadou.vim')
-"NeoBundle 'osyo-manga/vim-watchdogs'
 call dein#add('lervag/vim-latex')
 call dein#add('tpope/vim-surround')
 call dein#add('fcitx.vim')
@@ -116,7 +108,6 @@ call dein#add('Shougo/unite.vim')
 call dein#add('Konfekt/FastFold')
 call dein#add('mattn/emmet-vim')
 call dein#add('tyru/skk.vim')
-" NeoBundle 'justmao945/vim-clang'
 
 " Required:
 call dein#end()
