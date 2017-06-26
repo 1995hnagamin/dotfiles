@@ -124,10 +124,6 @@ syntax enable
 
 "End dein Scripts-------------------------
 
-" fugitive
-command! Commit :Gcommit -v
-command! Diff :Gvdiff
-
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
