@@ -93,7 +93,6 @@ call dein#add('kana/vim-smartinput')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('Konfekt/FastFold')
 call dein#add('LeafCage/yankround.vim')
-call dein#add('lervag/vim-latex')
 call dein#add('mattn/emmet-vim')
 call dein#add('mattn/sonictemplate-vim')
 call dein#add('osyo-manga/shabadou.vim')
@@ -186,14 +185,6 @@ let g:quickrun_config = {
       \   },
       \}
 
-let g:quickrun_config['tex'] = {
-      \   'command' : 'latexmk',
-      \   'outputter' : 'error',
-      \   'outputter/error/error' : 'quickfix',
-      \   'cmdopt': '-pdfdvi',
-      \   'exec': ['%c %o %s']
-      \ }
-
 " skk.vim
 let skk_jisyo = '~/.skk-jisyo'
 let skk_large_jisyo = '/usr/share/skk/SKK-JISYO.L'
@@ -247,8 +238,6 @@ augroup END
 " Scheme
 set lispwords=define-module,define,define-macro,define-syntax,syntax-case,syntax-rules,let1,receive,if,cond,lambda,case
 
-" TeX
-let g:tex_conceal=''
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
