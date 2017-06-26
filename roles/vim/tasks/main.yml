@@ -5,5 +5,5 @@
     dest: ~/.vimrc
 - name: install ftplugin
   copy:
-    src: ftplugin
+    src: after/ftplugin
     dest:  ~/.vim/
