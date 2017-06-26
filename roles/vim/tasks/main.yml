@@ -3,6 +3,10 @@
   copy:
     src: vimrc
     dest: ~/.vimrc
+- name: install ftdetect
+  copy:
+    src: ftdetect
+    dest: ~/.vim/
 - name: install ftplugin
   copy:
     src: after/ftplugin
