@@ -1,0 +1,7 @@
+---
+- name: Download Shougo/dein.vim/bin/installer.sh
+  get_url:
+    url: https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+    dest: /tmp/dein-installer.sh
+- name: Install Shougo/dein.vim
+  script: /tmp/dein-installer.sh $HOME/.vim/dein
