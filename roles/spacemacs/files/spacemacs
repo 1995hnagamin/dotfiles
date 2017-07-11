@@ -324,6 +324,7 @@ you should place your code here."
 
   (add-hook 'window-setup-hook 'on-after-init)
 
+  (push "~/.spacemacs.d/" load-path)
   (load "local-config")
   )
 
