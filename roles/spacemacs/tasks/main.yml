@@ -1,5 +1,15 @@
 ---
+- name: ensure ~/.spacemacs.d exists
+  file:
+    path: ~/.spacemacs.d
+    state: directory
 - name: install .spacemacs
   copy:
     src: spacemacs
     dest: ~/.spacemacs.d/init.el
+- stat:
+    path: ~/.spacemacs.d/local-config.el
+  register: local_config
+- name: touch ~/.spacemacs.d/local-config.el
+  command: touch ~/.spacemacs.d/local-config.el
+  when: local_config.stat.exists == false
