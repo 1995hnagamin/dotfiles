@@ -2,4 +2,4 @@
 - name: install .spacemacs
   copy:
     src: spacemacs
-    dest: ~/.spacemacs
+    dest: ~/.spacemacs.d/init.el
