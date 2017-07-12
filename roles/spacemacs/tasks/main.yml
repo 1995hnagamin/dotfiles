@@ -13,3 +13,8 @@
 - name: touch ~/.spacemacs.d/local-config.el
   command: touch ~/.spacemacs.d/local-config.el
   when: local_config.stat.exists == false
+- name: ensure '~/.spacemacs.d/custom-set-variables.el' exists
+  copy:
+    src: custom-set-variables.el
+    dest: ~/.spacemacs.d/custom-set-variables.el
+    force: no
