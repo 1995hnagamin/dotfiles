@@ -5,7 +5,7 @@
     state: directory
 - name: install .spacemacs
   copy:
-    src: spacemacs
+    src: init.el
     dest: ~/.spacemacs.d/init.el
 - stat:
     path: ~/.spacemacs.d/local-config.el
