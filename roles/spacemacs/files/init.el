@@ -343,5 +343,8 @@ you should place your code here."
       (setq skk-server-host "localhost")
       (setq skk-server-portnum 1178))
     (require 'skk-study)
-   )
+    )
+
+  (add-hook 'markdown-mode-hook
+            '(lambda () (outline-minor-mode t)))
   )
