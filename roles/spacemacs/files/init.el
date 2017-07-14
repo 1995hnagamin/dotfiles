@@ -39,6 +39,7 @@ values."
      ivy
      ;; auto-completion
      ;; better-defaults
+     asciidoc
      emacs-lisp
      git
      markdown
