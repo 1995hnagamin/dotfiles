@@ -315,6 +315,9 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (push "~/.spacemacs.d/" load-path)
+  (load "local-config")
+
   (when (eq system-type 'darwin)
     (setq ns-command-modifier (quote meta)))
 
@@ -333,11 +336,11 @@ you should place your code here."
   (when (require 'skk nil t)
     (global-set-key (kbd "C-x j") 'skk-auto-fill-mode)
     (setq default-input-method "japanese-skk")
-    (setq skk-server-host "localhost")
-    (setq skk-server-portnum 1178)
+    (when (and
+            (boundp 'local-config-use-skk-server)
+            local-config-use-skk-server)
+      (setq skk-server-host "localhost")
+      (setq skk-server-portnum 1178))
     (require 'skk-study)
    )
-
-  (push "~/.spacemacs.d/" load-path)
-  (load "local-config")
   )
