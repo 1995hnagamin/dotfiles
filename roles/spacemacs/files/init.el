@@ -319,6 +319,8 @@ you should place your code here."
   (push "~/.spacemacs.d/" load-path)
   (load "local-config")
 
+  (keyboard-translate ?\C-h ?\C-?)
+
   (when (eq system-type 'darwin)
     (setq ns-command-modifier (quote meta)))
 
