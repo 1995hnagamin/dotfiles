@@ -305,6 +305,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (set-face-background 'default nil)
   (setq custom-file "~/.spacemacs.d/custom-set-variables.el")
   (load custom-file)
   )
@@ -329,12 +330,6 @@ you should place your code here."
       (set-face-background 'default "unspecified-bg" frame)))
   (on-frame-open (selected-frame))
   (add-hook 'after-make-frame-functions 'on-frame-open)
-
-  (defun on-after-init ()
-    (unless (display-graphic-p (selected-frame))
-      (set-face-background 'default "unspecified-bg" (selected-frame))))
-
-  (add-hook 'window-setup-hook 'on-after-init)
 
   (when (require 'skk nil t)
     (global-set-key (kbd "C-x j") 'skk-auto-fill-mode)
