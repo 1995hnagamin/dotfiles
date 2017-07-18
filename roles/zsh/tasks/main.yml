@@ -3,3 +3,7 @@
   copy:
     src: zshrc
     dest: ~/.zshrc
+- name: install zshenv
+  copy:
+    src: zshenv
+    dest: ~/.zshenv
