@@ -17,7 +17,6 @@ alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
 
 autoload -U compinit && compinit
-export TERM=screen-256color
 
 # homebrew
 export HOMEBREW_NO_ANALYTICS=1
