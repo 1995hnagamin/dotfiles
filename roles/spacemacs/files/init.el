@@ -306,6 +306,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (set-face-background 'default nil)
+  (setq exec-path-from-shell-arguments '("-l"))
   (setq custom-file "~/.spacemacs.d/custom-set-variables.el")
   (load custom-file)
   )
