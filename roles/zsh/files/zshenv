@@ -1,0 +1,13 @@
+export PATH=$HOME/.local/bin:$HOME/local/bin:$HOME/local/bin2:$PATH
+
+# Go (golang)
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Haskell
+export PATH=$HOME/.cabal/bin:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+source ~/.zshenv.local
