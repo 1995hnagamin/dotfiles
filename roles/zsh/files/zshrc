@@ -25,8 +25,4 @@ export HOMEBREW_NO_ANALYTICS=1
 # Common Lisp
 alias sbcl='rlwrap sbcl'
 
-# Node
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 source ~/.zshrc.local
