@@ -3,7 +3,7 @@
   file:
     path: ~/.spacemacs.d
     state: directory
-- name: install .spacemacs
+- name: install ~/.spacemacs.d/init.el
   copy:
     src: init.el
     dest: ~/.spacemacs.d/init.el
