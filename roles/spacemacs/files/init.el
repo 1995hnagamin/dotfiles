@@ -323,6 +323,7 @@ you should place your code here."
   (load "local-config")
 
   (keyboard-translate ?\C-h ?\C-?)
+  (global-linum-mode t)
 
   (when (eq system-type 'darwin)
     (setq ns-command-modifier (quote meta)))
