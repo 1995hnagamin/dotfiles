@@ -43,6 +43,7 @@ values."
      emacs-lisp
      git
      markdown
+     ocaml
      org
      rust
      ;; (shell :variables
