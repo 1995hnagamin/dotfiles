@@ -9,6 +9,7 @@
     - gvim
     - latexmk
     - sonictemplate
+    - spacemacs
     - tmux
     - vim
     - zsh

@@ -6,4 +6,7 @@
     email: hnagamin@trans-nt.com
   roles:
     - git
+    - sonictemplate
+    - spacemacs
     - vim
+    - zsh

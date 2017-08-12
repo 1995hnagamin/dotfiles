@@ -7,7 +7,6 @@ HISTSIZE=5000
 SAVEHIST=50000
 HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S'
 HISTFILE=${HOME}/.zsh_history
-PATH=$HOME/.local/bin:$HOME/local/bin:$HOME/local/bin2:$PATH
 setopt EXTENDED_HISTORY
 setopt hist_no_store
 setopt hist_reduce_blanks
@@ -18,19 +17,11 @@ alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
 
 autoload -U compinit && compinit
-export TERM=screen-256color
 
 # homebrew
 export HOMEBREW_NO_ANALYTICS=1
 
 # Common Lisp
 alias sbcl='rlwrap sbcl'
-
-# Go (golang)
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# Haskell
-export PATH=$HOME/.cabal/bin:$PATH
 
 source ~/.zshrc.local
