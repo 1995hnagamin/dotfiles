@@ -22,6 +22,7 @@ set listchars=eol:~,tab:._,trail:?,extends:>,precedes:<,nbsp:]
 colorscheme elflord
 
 
+set pastetoggle=<F2>
 nnoremap <C-@> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <ESC><ESC> :noh<CR>
