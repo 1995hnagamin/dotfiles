@@ -325,6 +325,8 @@ you should place your code here."
   (keyboard-translate ?\C-h ?\C-?)
   (global-linum-mode t)
 
+  (setq overlay-arrow-string "")
+
   (when (eq system-type 'darwin)
     (setq ns-command-modifier (quote meta)))
 
