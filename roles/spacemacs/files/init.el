@@ -326,6 +326,7 @@ you should place your code here."
   (global-linum-mode t)
 
   (setq overlay-arrow-string "")
+  (define-key coq-mode-map (kbd "C-c RET") 'proof-goto-point)
 
   (when (eq system-type 'darwin)
     (setq ns-command-modifier (quote meta)))
