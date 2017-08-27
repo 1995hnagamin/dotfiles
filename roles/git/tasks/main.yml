@@ -3,6 +3,12 @@
   template:
     src: gitconfig.j2
     dest: ~/.gitconfig
+- stat:
+    path: ~/.gitconfig.local
+  register: local_config
+- name: touch ~/.gitconfig.local
+  command: touch ~/.gitconfig.local
+  when: local_config.stat.exists == false
 - name: install git_tmp
   copy:
     src: git_tmp

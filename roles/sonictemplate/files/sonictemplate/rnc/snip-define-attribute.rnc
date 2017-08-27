@@ -1,0 +1,4 @@
+{{_expr_:substitute('{{_input_:elem_name}}', '\<.', '\u&', 'g')}} =
+  attribute {{_input_:elem_name}} {
+    {{_cursor_}}
+  }
