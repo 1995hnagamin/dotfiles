@@ -325,6 +325,7 @@ you should place your code here."
   (keyboard-translate ?\C-h ?\C-?)
   (global-linum-mode t)
 
+  (require 'coq-mode)
   (setq overlay-arrow-string "")
   (define-key coq-mode-map (kbd "C-c RET") 'proof-goto-point)
 
