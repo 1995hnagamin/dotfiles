@@ -325,9 +325,11 @@ you should place your code here."
   (keyboard-translate ?\C-h ?\C-?)
   (global-linum-mode t)
 
-  (require 'coq-mode)
-  (setq overlay-arrow-string "")
-  (define-key coq-mode-map (kbd "C-c RET") 'proof-goto-point)
+  (defun coq-preference ()
+    (setq overlay-arrow-string "")
+    (define-key coq-mode-map (kbd "C-c RET") 'proof-goto-point))
+
+  (add-hook 'coq-mode-hook #'coq-preference)
 
   (when (eq system-type 'darwin)
     (setq ns-command-modifier (quote meta)))
