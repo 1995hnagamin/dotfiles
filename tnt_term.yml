@@ -9,5 +9,6 @@
     - sonictemplate
     - spacemacs
     - tig
+    - tmux
     - vim
     - zsh
