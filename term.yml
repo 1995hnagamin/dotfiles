@@ -6,6 +6,8 @@
     email: 1995.hnagamin@gmail.com
   roles:
     - git
+    - spacemacs
+    - tig
     - tmux
     - vim
     - zsh

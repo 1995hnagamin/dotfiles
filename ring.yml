@@ -1,4 +1,0 @@
----
-- hosts: ring
-  roles:
-    - terminal
