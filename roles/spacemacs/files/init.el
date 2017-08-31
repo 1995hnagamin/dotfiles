@@ -327,7 +327,8 @@ you should place your code here."
 
   (defun coq-preference ()
     (setq overlay-arrow-string "")
-    (define-key coq-mode-map (kbd "C-c RET") 'proof-goto-point))
+    (define-key coq-mode-map (kbd "C-c RET") 'proof-goto-point)
+    (define-key coq-mode-map (kbd "C-c C-^") 'proof-goto-point))
 
   (add-hook 'coq-mode-hook #'coq-preference)
 
