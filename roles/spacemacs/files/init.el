@@ -333,6 +333,7 @@ you should place your code here."
   (add-hook 'coq-mode-hook #'coq-preference)
 
   (when (eq system-type 'darwin)
+    (define-key global-map [?¥] [?\\])
     (setq ns-command-modifier (quote meta)))
 
   (defun on-frame-open (frame)
