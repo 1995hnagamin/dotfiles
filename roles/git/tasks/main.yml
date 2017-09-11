@@ -11,5 +11,5 @@
   when: local_config.stat.exists == false
 - name: install git_tmp
   copy:
-    src: git_tmp
+    src: git_tmp/
     dest: ~/.git_tmp
