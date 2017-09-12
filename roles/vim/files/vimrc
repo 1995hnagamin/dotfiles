@@ -32,7 +32,7 @@ function! s:SID_PREFIX()
   return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
 endfunction
 
-" show tabline
+" Show tabline {{{
 function! s:my_tabline()
   let s = ''
   for i in range(1, tabpagenr('$'))
@@ -65,11 +65,13 @@ map <silent> [Tag]x :tabclose<CR>
 map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 
+" }}}
+
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
-"--- Plugin
+"--- Plugin {{{
 
-"dein Scripts-----------------------------
+"dein Scripts {{{
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -124,7 +126,7 @@ syntax enable
 "  call dein#install()
 "endif
 
-"End dein Scripts-------------------------
+"End dein Scripts }}}
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
@@ -224,7 +226,10 @@ nmap gP <Plug>(yankround-gP)
 nmap yp <Plug>(yankround-prev)
 nmap yn <Plug>(yankround-next)
 command! YankHistory :Unite yankround
-"--- language
+
+" }}}
+
+"--- Language {{{
 
 " C++
 
@@ -236,6 +241,7 @@ augroup END
 " Scheme
 set lispwords=define-module,define,define-macro,define-syntax,syntax-case,syntax-rules,let1,receive,if,cond,lambda,case
 
+" }}}
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
