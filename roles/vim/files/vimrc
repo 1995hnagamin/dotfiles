@@ -206,7 +206,17 @@ let g:quickrun_config['cpp/watchdogs_checker'] = {
       \   'cmdopt' : '-std=c++14',
       \ }
 
+let g:watchdogs_check_BufWritePost_enable = 1
+let g:watchdogs_check_BufWritePost_enables = {
+      \   'cpp' : 0
+      \ }
+
 let g:watchdogs_check_CursorHold_enable = 1
+let g:watchdogs_check_CursorHold_enables = {
+      \   'cpp' : 0
+      \ }
+
+call watchdogs#setup(g:quickrun_config)
 
 " yankround.vim
 nmap p <Plug>(yankround-p)
