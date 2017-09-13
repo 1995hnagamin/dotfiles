@@ -177,12 +177,10 @@ endif
 
 let g:quickrun_config = {
       \   'make' : {
-      \       'command'   : 'mingw32-make',
+      \       'command'   : 'make',
       \       'exec' : '%c %o',
       \       'outputter' : 'error:buffer:quickfix',
       \       'runner' : 'vimproc',
-      \       'hook/cd/enable' : 1,
-      \       'hook/cd/directory' : 'D:/test/aaa',
       \   },
       \}
 
