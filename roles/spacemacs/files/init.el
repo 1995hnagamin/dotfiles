@@ -332,6 +332,10 @@ you should place your code here."
 
   (add-hook 'coq-mode-hook #'coq-preference)
 
+  ; org-mode
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
+
   (when (eq system-type 'darwin)
     (define-key global-map [?¥] [?\\])
     (setq ns-command-modifier (quote meta)))
