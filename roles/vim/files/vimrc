@@ -111,7 +111,7 @@ call dein#add('vim-scripts/Gundo')
 call dein#add('vim-scripts/mru.vim')
 call dein#add('vim-scripts/vim-auto-save')
 
-call dein#local('~/.local/share/dein_local_repos')
+call dein#local('~/.local/share/dein_local_plugins')
 
 " Required:
 call dein#end()
