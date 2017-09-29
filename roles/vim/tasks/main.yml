@@ -10,4 +10,4 @@
 - name: install ftplugin
   copy:
     src: after/ftplugin
-    dest:  ~/.vim/
+    dest:  ~/.vim/after/
