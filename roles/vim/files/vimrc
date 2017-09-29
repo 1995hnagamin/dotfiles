@@ -28,6 +28,8 @@ nnoremap <C-@> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <ESC><ESC> :noh<CR>
 
+command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
+
 function! s:SID_PREFIX()
   return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
 endfunction
@@ -66,8 +68,6 @@ map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 
 " }}}
-
-command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
 "--- Plugin {{{
 
