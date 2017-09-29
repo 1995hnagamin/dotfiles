@@ -335,6 +335,7 @@ you should place your code here."
   ; org-mode
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
+  (setq org-link-file-path-type 'relative)
 
   (when (eq system-type 'darwin)
     (define-key global-map [?¥] [?\\])
