@@ -1,5 +1,5 @@
 if exists('b:did_ftplugin_cpp_after')
-  finish
+    finish
 endif
 
 setlocal tabstop=2
