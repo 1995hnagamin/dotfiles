@@ -197,16 +197,6 @@ command! YankHistory :Unite yankround
 
 " }}}
 
-"--- Language {{{
-
-" C++
-
-" PAS, PASXX
-augroup FiletypePASXX
-  au Filetype pasm,pasxx NeoCompleteLock
-augroup END
-" }}}
-
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
