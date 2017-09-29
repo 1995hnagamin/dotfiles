@@ -205,10 +205,6 @@ command! YankHistory :Unite yankround
 augroup FiletypePASXX
   au Filetype pasm,pasxx NeoCompleteLock
 augroup END
-
-" Scheme
-set lispwords=define-module,define,define-macro,define-syntax,syntax-case,syntax-rules,let1,receive,if,cond,lambda,case
-
 " }}}
 
 if filereadable(expand('~/.vimrc.local'))
