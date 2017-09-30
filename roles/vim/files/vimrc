@@ -44,8 +44,8 @@ xmap p <Plug>(yankround-p)
 " Tab pages
 nnoremap [Tag] <Nop>
 nnoremap <Space> [Tag]
-for n in range(1, 9)
-    execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+for s:n in range(1, 9)
+    execute 'nnoremap <silent> [Tag]'.s:n  ':<C-u>tabnext'.s:n.'<CR>'
 endfor
 
 "End Keymap }}}
@@ -53,10 +53,6 @@ endfor
 "--- Plugin {{{
 
 "dein Scripts {{{
-if &compatible
-    set nocompatible               " Be iMproved
-endif
-
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.vim/dein')
