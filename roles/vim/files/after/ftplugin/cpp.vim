@@ -6,6 +6,7 @@ setlocal tabstop=2
 setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
+setlocal foldmethod=syntax
 
 function! s:InsertSemicolon()
     execute "normal /}\<CR>a;\<Esc>\<C-o>:nohlsearch\<CR>"
