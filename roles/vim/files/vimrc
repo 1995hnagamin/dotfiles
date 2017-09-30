@@ -40,8 +40,10 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <ESC><ESC> :noh<CR>
 xmap gp <Plug>(yankround-gp)
 xmap p <Plug>(yankround-p)
+
+" Tab pages
 nnoremap [Tag] <Nop>
-nmap <Space> [Tag]
+nnoremap <Space> [Tag]
 for n in range(1, 9)
     execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
 endfor
