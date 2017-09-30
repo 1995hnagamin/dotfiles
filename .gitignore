@@ -1,2 +1,5 @@
 *.retry
 *.un~
+
+.*
+!.gitignore
