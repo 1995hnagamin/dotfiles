@@ -31,12 +31,15 @@ nnoremap <ESC><ESC> :noh<CR>
 
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
+"--- Keymap {{{
 set showtabline=2
 nnoremap [Tag] <Nop>
 nmap <Space> [Tag]
 for n in range(1, 9)
     execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
 endfor
+
+"End Keymap }}}
 
 "--- Plugin {{{
 
@@ -122,7 +125,7 @@ let g:lightline = {
             \ }
 set laststatus=2
 
-" neocomplete
+" neocomplete {{{
 if has('lua')
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_ignore_case = 1
@@ -142,7 +145,9 @@ if has('lua')
     let g:neocomplete#sources#omni#input_patterns.tex = '\\ref{\s*[0-9A-Za-z_:]*'
 endif
 
-" quickrun.vim
+"End neocomplete }}}
+
+" quickrun.vim {{{
 
 let g:quickrun_config = {
             \   'make' : {
@@ -153,6 +158,8 @@ let g:quickrun_config = {
             \   },
             \}
 
+"End quickrun.vim }}}
+
 " sonictemplate-vim
 let g:sonictemplate_vim_template_dir = [
             \ '~/.vim/sonictemplate'
@@ -161,7 +168,7 @@ let g:sonictemplate_vim_template_dir = [
 " unite.vim
 let g:unite_enable_start_insert=1
 
-" watchdogs.vim
+" watchdogs.vim {{{
 let g:quickrun_config['watchdogs_checker/_'] = {
             \   'outputter/quickfix/open_cmd': '',
             \   'hook/echo/enable': 1,
@@ -185,6 +192,8 @@ let g:watchdogs_check_CursorHold_enables = {
 
 call watchdogs#setup(g:quickrun_config)
 
+"End watchdogs.vim }}}
+
 " yankround.vim
 nmap p <Plug>(yankround-p)
 xmap p <Plug>(yankround-p)
@@ -196,7 +205,7 @@ nmap yp <Plug>(yankround-prev)
 nmap yn <Plug>(yankround-next)
 command! YankHistory :Unite yankround
 
-" }}}
+"End Plugin }}}
 
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
