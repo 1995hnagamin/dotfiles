@@ -10,13 +10,16 @@ set hlsearch
 set splitright
 set backspace=indent,eol,start
 set foldmethod=marker
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight ErrorMsg ctermbg=none
-autocmd ColorScheme * highlight WarningMsg ctermbg=none
 set updatetime=1000
 set autoread
 set list
 set listchars=eol:~,tab:._,trail:?,extends:>,precedes:<,nbsp:]
+augroup CleanBackGround
+    autocmd!
+    autocmd ColorScheme * highlight Normal ctermbg=none
+    autocmd ColorScheme * highlight ErrorMsg ctermbg=none
+    autocmd ColorScheme * highlight WarningMsg ctermbg=none
+augroup END
 colorscheme elflord
 
 
