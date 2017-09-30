@@ -7,8 +7,6 @@ set autoindent
 set smartindent
 set ambiwidth=double
 set hlsearch
-set undofile
-set undodir=$HOME/.vim/undodir
 set splitright
 set backspace=indent,eol,start
 set foldmethod=marker
