@@ -9,7 +9,6 @@ set ambiwidth=double
 set hlsearch
 set splitright
 set backspace=indent,eol,start
-set foldmethod=marker
 set updatetime=1000
 set autoread
 set list
