@@ -26,7 +26,6 @@ command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
 "--- Keymap {{{1
 set pastetoggle=<F2>
-inoremap <C-T> <ESC>:Template<Space>
 nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap p <Plug>(yankround-p)
