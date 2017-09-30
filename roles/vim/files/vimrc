@@ -14,6 +14,7 @@ set updatetime=1000
 set autoread
 set list
 set listchars=eol:~,tab:._,trail:?,extends:>,precedes:<,nbsp:]
+set showtabline=2
 augroup CleanBackGround
     autocmd!
     autocmd ColorScheme * highlight Normal ctermbg=none
@@ -22,17 +23,23 @@ augroup CleanBackGround
 augroup END
 colorscheme elflord
 
-
-set pastetoggle=<F2>
-inoremap <C-T> <ESC>:Template<Space>
-nnoremap <C-@> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-nnoremap <ESC><ESC> :noh<CR>
-
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
 "--- Keymap {{{
-set showtabline=2
+set pastetoggle=<F2>
+inoremap <C-T> <ESC>:Template<Space>
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap yp <Plug>(yankround-prev)
+nmap yn <Plug>(yankround-next)
+nnoremap <C-@> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <ESC><ESC> :noh<CR>
+xmap gp <Plug>(yankround-gp)
+xmap p <Plug>(yankround-p)
 nnoremap [Tag] <Nop>
 nmap <Space> [Tag]
 for n in range(1, 9)
@@ -100,11 +107,6 @@ syntax enable
 "endif
 
 "End dein Scripts }}}
-
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
-
-syntax on
 
 " lightline
 
@@ -195,14 +197,6 @@ call watchdogs#setup(g:quickrun_config)
 "End watchdogs.vim }}}
 
 " yankround.vim
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap yp <Plug>(yankround-prev)
-nmap yn <Plug>(yankround-next)
 command! YankHistory :Unite yankround
 
 "End Plugin }}}
