@@ -1,0 +1,5 @@
+---
+- name: install vintrc.yaml
+  copy:
+    src: vintrc.yaml
+    dest: ~/.vintrc.yaml
