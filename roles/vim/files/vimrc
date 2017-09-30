@@ -42,8 +42,8 @@ xmap gp <Plug>(yankround-gp)
 xmap p <Plug>(yankround-p)
 
 " Tab pages
-nnoremap [Tag] <Nop>
-nnoremap <Space> [Tag]
+nmap [Tag] <Nop>
+nmap <Space> [Tag]
 for s:n in range(1, 9)
     execute 'nnoremap <silent> [Tag]'.s:n  ':<C-u>tabnext'.s:n.'<CR>'
 endfor
