@@ -108,8 +108,7 @@ syntax enable
 
 "End dein Scripts }}}
 
-" lightline
-
+" lightline {{{
 let g:lightline = {
             \ 'colorscheme': 'wombat',
             \ 'active': {
@@ -126,6 +125,7 @@ let g:lightline = {
             \ 'subseparator': { 'left':'','right':'' },
             \ }
 set laststatus=2
+" End lightline }}}
 
 " neocomplete {{{
 if has('lua')
@@ -162,10 +162,11 @@ let g:quickrun_config = {
 
 "End quickrun.vim }}}
 
-" sonictemplate-vim
+" sonictemplate-vim {{{
 let g:sonictemplate_vim_template_dir = [
             \ '~/.vim/sonictemplate'
             \]
+"End sonictemplate-vim }}}
 
 " unite.vim
 let g:unite_enable_start_insert=1
