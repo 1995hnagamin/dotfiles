@@ -12,7 +12,7 @@ set backspace=indent,eol,start
 set updatetime=1000
 set autoread
 set list
-set listchars=eol:~,tab:._,trail:?,extends:>,precedes:<,nbsp:]
+set listchars=eol:~,tab:~-,trail:?,extends:>,precedes:<,nbsp:]
 set showtabline=2
 augroup CleanBackGround
     autocmd!
