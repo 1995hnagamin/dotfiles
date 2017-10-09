@@ -33,7 +33,7 @@ nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
 nmap yp <Plug>(yankround-prev)
 nmap yn <Plug>(yankround-next)
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <Space>g :GundoToggle<CR>
 nnoremap <Space>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <Space>Tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <ESC><ESC> :noh<CR>
