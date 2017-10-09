@@ -6,6 +6,7 @@ syntax on
 set autoindent
 set smartindent
 set ambiwidth=double
+set incsearch
 set hlsearch
 set splitright
 set backspace=indent,eol,start
