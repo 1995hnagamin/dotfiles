@@ -26,7 +26,6 @@ colorscheme elflord
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
 "--- Keymap {{{1
-set pastetoggle=<F2>
 nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap p <Plug>(yankround-p)
@@ -34,6 +33,7 @@ nmap P <Plug>(yankround-P)
 nmap yp <Plug>(yankround-prev)
 nmap yn <Plug>(yankround-next)
 nnoremap <Space>g :GundoToggle<CR>
+nnoremap <silent> <Space>p :set invpaste<CR>
 nnoremap <Space>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <Space>Tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <Space>Uf :Unite file<CR>
