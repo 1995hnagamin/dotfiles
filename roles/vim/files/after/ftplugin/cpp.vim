@@ -9,7 +9,7 @@ setlocal expandtab
 setlocal foldmethod=syntax
 
 function! s:InsertSemicolon()
-    execute "normal /}\<CR>a;\<Esc>\<C-o>:nohlsearch\<CR>"
+    execute "normal! /}\<CR>a;\<Esc>\<C-o>:nohlsearch\<CR>"
 endfunction
 
 nnoremap <buffer> <Space>; :<C-u>call <SID>InsertSemicolon()<CR>
