@@ -71,6 +71,7 @@ if dein#load_state('~/.vim/dein')
     call dein#add('cohama/vim-hier')
     call dein#add('ciaranm/detectindent')
     call dein#add('dannyob/quickfixstatus')
+    call dein#add('haya14busa/incsearch.vim')
     call dein#add('itchyny/lightline.vim')
     call dein#add('kana/vim-filetype-haskell')
     call dein#add('kana/vim-smartinput')
@@ -100,6 +101,12 @@ endif
 filetype plugin indent on
 syntax enable
 "End dein Scripts }}}2
+
+" incsearch.vim {{{2
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+" End incsearch.vim }}}2
 
 " lightline {{{2
 let g:lightline = {
