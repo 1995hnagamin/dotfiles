@@ -336,6 +336,7 @@ you should place your code here."
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
   (setq org-link-file-path-type 'relative)
+  (setq spaceline-org-clock-p t)
 
   (when (eq system-type 'darwin)
     (define-key global-map [?¥] [?\\])
