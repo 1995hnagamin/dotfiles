@@ -60,6 +60,7 @@ values."
    dotspacemacs-additional-packages
    '(
      ddskk
+     mew
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
