@@ -72,6 +72,7 @@ if dein#load_state('~/.vim/dein')
     call dein#add('ciaranm/detectindent')
     call dein#add('dannyob/quickfixstatus')
     call dein#add('haya14busa/incsearch.vim')
+    call dein#add('haya14busa/vim-asterisk')
     call dein#add('itchyny/lightline.vim')
     call dein#add('jvoorhis/coq.vim')
     call dein#add('kana/vim-filetype-haskell')
@@ -197,6 +198,13 @@ let g:watchdogs_check_CursorHold_enables = {
 call watchdogs#setup(g:quickrun_config)
 
 "End watchdogs.vim }}}2
+
+" vim-asterisk {{{2
+map *  <Plug>(asterisk-z*)
+map #  <Plug>(asterisk-z#)
+map g* <Plug>(asterisk-gz*)
+map g# <Plug>(asterisk-gz#)
+" End vim-asterisk }}}2
 
 "End Plugin }}}1
 
