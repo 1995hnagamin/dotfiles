@@ -62,7 +62,7 @@ values."
    dotspacemacs-additional-packages
    '(
      ddskk
-     imenu-ilist
+     imenu-list
      mew
      pandoc-mode
      )
