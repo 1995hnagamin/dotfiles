@@ -42,6 +42,7 @@ values."
      asciidoc
      emacs-lisp
      git
+     html
      markdown
      ocaml
      org
@@ -52,6 +53,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      version-control
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -60,7 +62,9 @@ values."
    dotspacemacs-additional-packages
    '(
      ddskk
+     imenu-ilist
      mew
+     pandoc-mode
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
