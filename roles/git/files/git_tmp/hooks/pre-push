@@ -1,0 +1,9 @@
+#!/bin/sh
+
+while read local_ref local_sha remote_ref remote_sha
+do
+	msg=$(git --no-pager log --pretty=format:'%s' --max-count=1 $local_ref)
+	if [ $(echo $msg | grep 'WIP') ]; then
+		exit 1
+	fi
+done
