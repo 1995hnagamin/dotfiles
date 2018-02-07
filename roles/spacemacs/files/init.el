@@ -356,7 +356,6 @@ you should place your code here."
   (when (require 'skk nil t)
     (global-set-key (kbd "C-x j") 'skk-auto-fill-mode)
     (setq default-input-method "japanese-skk")
-    (setq-default skk-kutouten-type 'en)
     (when (and
             (boundp 'local-config-use-skk-server)
             local-config-use-skk-server)
