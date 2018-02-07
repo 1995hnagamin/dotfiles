@@ -367,4 +367,12 @@ you should place your code here."
 
   (add-hook 'markdown-mode-hook
             '(lambda () (outline-minor-mode t)))
+  (add-hook 'markdown-mode-hook
+            'imenu-add-menubar-index)
+  (use-package imenu-list
+    :ensure t
+    :bind (("C-'" . imenu-list-smart-toggle))
+    :config
+    (setq imenu-list-focus-after-activation t
+          imenu-list-auto-resize nil))
   )
