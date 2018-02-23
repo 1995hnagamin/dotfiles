@@ -1,5 +1,19 @@
 ---
-- name: install sonictemplate files
+- name: install sonictemplate files (C++)
   copy:
-    src: sonictemplate
-    dest: ~/.vim/
+    src: "{{ item }}"
+    dest: ~/.vim/sonictemplate/cpp
+  with_fileglob:
+    - sonictemplate/cpp/*.cpp
+- name: install sonictemplate files (RelaxNG)
+  copy:
+    src: "{{ item }}"
+    dest: ~/.vim/sonictemplate/rnc
+  with_fileglob:
+    - sonictemplate/rnc/*.rnc
+- name: install sonictemplate files (Fortran)
+  copy:
+    src: "{{ item }}"
+    dest: ~/.vim/sonictemplate/fortran
+  with_fileglob:
+    - sonictemplate/fortran/*.f90
