@@ -1,7 +1,9 @@
 #include <algorithm>
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <numeric>
+#include <utility>
 #include <vector>
 #define FOR(i,a,b) for (int i=(a);i<(b);i++)
 #define RFOR(i,a,b) for (int i=(b)-1;i>=(a);i--)
@@ -11,6 +13,7 @@
 using namespace std;
 
 int main() {
+  // cout << fixed << setprecision(10);
   {{_cursor_}}
   return 0;
 }
