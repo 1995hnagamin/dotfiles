@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <array>
+#include <cassert>
 #include <iomanip>
 #include <iostream>
 #include <map>
