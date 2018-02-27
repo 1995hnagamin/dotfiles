@@ -14,12 +14,12 @@
 constexpr int INF = 100100100;
 
 template<typename T>
-chmin(T &x, T y) {
+void chmin(T &x, T y) {
   x = std::min(x, y);
 }
 
 template<typename T>
-chmax(T &x, T y) {
+void chmax(T &x, T y) {
   x = std::max(x, y);
 }
 
