@@ -5,7 +5,9 @@
     ansible_python_interpreter: /usr/bin/python2
     email: 1995.hnagamin@gmail.com
   roles:
+    - commune
     - git
+    - sonictemplate
     - spacemacs
     - tig
     - tmux
