@@ -1,3 +1,0 @@
-[submodule "roles/commune/files"]
-	path = roles/commune/files
-	url = git://github.com/1995hnagamin/commune.git
