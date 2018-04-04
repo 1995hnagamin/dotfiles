@@ -2,7 +2,6 @@
 - hosts: localhost
   connection: local
   vars:
-    ansible_python_interpreter: /usr/local/bin/python2
     email: 1995.hnagamin@gmail.com
   roles:
     - commune
