@@ -12,7 +12,7 @@
 #define RFOR(i,a,b) for (int i=(a);i>=(b);--i)
 #define REP(i,n) for (int i=0;i<(n);i++)
 #define RREP(i,n) for (int i=(n)-1;i>=0;--i)
-constexpr int INF = 100100100;
+constexpr int INF = 1100100100;
 
 template<typename T>
 void chmin(T &x, T y) {
