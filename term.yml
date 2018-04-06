@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  gather_subset: '!ohai'
   connection: local
   vars:
     email: 1995.hnagamin@gmail.com
