@@ -28,12 +28,6 @@ command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 runtime! ftplugin/man.vim
 
 "--- Keymap {{{1
-nmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap yp <Plug>(yankround-prev)
-nmap yn <Plug>(yankround-next)
 nnoremap <Space>g :GundoToggle<CR>
 nnoremap <silent> <Space>p :set invpaste<CR>
 nnoremap <Space>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
@@ -41,8 +35,6 @@ nnoremap <Space>Tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <Space>Uf :Unite file<CR>
 nnoremap <ESC><ESC> :noh<CR>
 nnoremap <silent> <Space>o :execute "normal zczO"<CR>
-xmap gp <Plug>(yankround-gp)
-xmap p <Plug>(yankround-p)
 
 " Tab pages
 nmap [Tag] <Nop>
@@ -207,6 +199,17 @@ map #  <Plug>(asterisk-z#)
 map g* <Plug>(asterisk-gz*)
 map g# <Plug>(asterisk-gz#)
 " End vim-asterisk }}}2
+
+" yankround.vim {{{2
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap yp <Plug>(yankround-prev)
+nmap yn <Plug>(yankround-next)
+xmap gp <Plug>(yankround-gp)
+xmap p <Plug>(yankround-p)
+" End yankround.vim }}}2
 
 "End Plugin }}}1
 
