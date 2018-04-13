@@ -25,6 +25,8 @@ colorscheme elflord
 
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 
+runtime! ftplugin/man.vim
+
 "--- Keymap {{{1
 nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
