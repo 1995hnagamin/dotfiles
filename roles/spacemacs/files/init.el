@@ -40,6 +40,7 @@ values."
      ;; auto-completion
      ;; better-defaults
      asciidoc
+     csv
      emacs-lisp
      git
      html
