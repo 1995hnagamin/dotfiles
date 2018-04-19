@@ -15,6 +15,7 @@ set autoread
 set list
 set listchars=eol:~,tab:~-,trail:?,extends:>,precedes:<,nbsp:]
 set showtabline=2
+set tags=./tags;
 augroup CleanBackGround
     autocmd!
     autocmd ColorScheme * highlight Normal ctermbg=none
