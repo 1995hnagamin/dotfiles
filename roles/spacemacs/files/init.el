@@ -343,6 +343,11 @@ you should place your code here."
         '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
   (setq org-link-file-path-type 'relative)
   (setq spaceline-org-clock-p t)
+  (setq org-priority-faces
+        '((?A . (:foreground "red" :background "yellow"))
+          (?B . (:foreground "black" :background "yellow"))
+          (?C . (:foreground "green"))))
+
 
   (when (eq system-type 'darwin)
     (define-key global-map [?¥] [?\\])
