@@ -1,40 +1,45 @@
-const int VMAX;
+class FordFulkerson {
+  public:
+    struct edge {
+      explicit edge(size_t t, int c, size_t r) : to(t), cap(c), rev(r) {}
+      size_t to; int cap; size_t rev;
+    };
 
-struct edge { int to, cap, rev; };
+    explicit FordFulkerson(size_t v): G(v), used(v) {}
+    ~FordFulkerson() = default;
 
-vector<edge> G[VMAX];
-bool used[VMAX];
-
-void add_edge(int from, int to, int cap) {
-  G[from].push_back((edge){to, cap, (int)G[to].size()});
-  G[to].push_back((edge){from, 0, (int)G[from].size() - 1});
-}
-
-int dfs(int v, int t, int f) {
-  if (v == t) return f;
-  used[v] = true;
-
-  for (int i = 0; i < G[v].size(); i++) {
-    edge &e = G[v][i];
-    if (!used[e.to] and e.cap > 0) {
-      int d = dfs(e.to, t, min(f, e.cap));
-      if (d > 0) {
-        e.cap -= d;
-        G[e.to][e.rev].cap += d;
-        return d;
+    void add_edge(size_t from, size_t to, int cap) {
+      G[from].emplace_back(to, cap, G[to].size());
+      G[to].emplace_back(from, 0, G[from].size() - 1);
+    }
+    int dfs(size_t v, size_t t, int f) {
+      if (v == t) return f;
+      used[v] = true;
+      for (auto &&e : G[v]) {
+        if (used[e.to] || e.cap <= 0) continue;
+        int d = dfs(e.to, t, std::min(f, e.cap));
+        if (d > 0) {
+          e.cap -= d;
+          reverse(e).cap += d;
+          return d;
+        }
+      }
+      return 0;
+    }
+    int max_flow(size_t s, size_t t) {
+      int flow = 0;
+      while (true) {
+        std::fill(used.begin(), used.end(), 0);
+        int f = dfs(s, t, INF);
+        if (f == 0) return flow;
+        flow += f;
       }
     }
-  }
-  return 0;
-}
 
-int max_flow(int s, int t) {
-  int flow = 0;
-
-  while (true) {
-    memset(used, 0, sizeof(used));
-    int f = dfs(s, t, INF);
-    if (f == 0) return flow;
-    flow += f;
-  }
-}
+  private:
+    std::vector<std::vector<edge>> G;
+    std::vector<bool> used;
+    edge &reverse(edge const &e) {
+      return G[e.to][e.rev];
+    }
+};
