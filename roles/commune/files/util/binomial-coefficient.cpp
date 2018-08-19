@@ -1,4 +1,4 @@
-template<typename T = int, int max>
+template<typename T, int max>
 class Binom {
   public:
     constexpr Binom(): dp() {
@@ -9,7 +9,7 @@ class Binom {
         }
       }
     }
-    constexpr int binom(int n, int k) const {
+    constexpr T binom(int n, int k) const {
       assert(n >= k);
       return dp[n][k];
     }
