@@ -164,9 +164,17 @@ let g:quickrun_config = {
 "End quickrun.vim }}}2
 
 " ref.vim {{{2
+let g:ref_man_cmd = "man -P cat"
+let g:ref_man_lang = "C"
+
 let g:ref_source_webdict_sites = {
             \ 'dictionary_com': {
             \     'url': 'http://www.dictionary.com/browse/%s',
+            \ },
+            \ 'wiktionary': {
+            \   'url': 'http://en.wiktionary.org/wiki/%s',
+            \   'keyword_encoding': 'utf-8',
+            \   'cache': 1,
             \ },
             \ 'default': 'dictionary_com',
             \}
@@ -187,6 +195,10 @@ function! g:ref_source_webdict_sites.dictionary_com.filter(output)
         endif
     endfor
     return join(lines, "\n")
+endfunction
+
+function! g:ref_source_webdict_sites.wiktionary.filter(output)
+  return join(split(a:output, "\n")[18 :], "\n")
 endfunction
 
 nnoremap <Space>d :call ref#jump("normal", "webdict")<CR>
