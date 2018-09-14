@@ -12,7 +12,6 @@ setopt hist_no_store
 setopt hist_reduce_blanks
 setopt share_history
 
-alias gosh='rlwrap gosh'
 alias ocaml='rlwrap ocaml'
 
 autoload -U compinit && compinit
