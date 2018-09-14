@@ -89,6 +89,7 @@ if dein#load_state('~/.vim/dein')
     call dein#add('tpope/vim-surround')
     call dein#add('vim-scripts/Gundo')
     call dein#add('vim-scripts/mru.vim')
+    call dein#add('vim-scripts/project.tar.gz')
     call dein#add('vim-scripts/vim-auto-save')
 
     call dein#local('~/.local/share/dein_local_plugins')
