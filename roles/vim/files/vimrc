@@ -77,6 +77,8 @@ if dein#load_state('~/.vim/dein')
     call dein#add('LeafCage/yankround.vim')
     call dein#add('mattn/emmet-vim')
     call dein#add('mattn/sonictemplate-vim')
+    call dein#add('mattn/webapi-vim')
+    call dein#add('mattn/wwwrenderer-vim')
     call dein#add('osyo-manga/shabadou.vim')
     call dein#add('osyo-manga/vim-watchdogs')
     call dein#add('rust-lang/rust.vim')
@@ -162,6 +164,33 @@ let g:quickrun_config = {
 "End quickrun.vim }}}2
 
 " ref.vim {{{2
+let g:ref_source_webdict_sites = {
+            \ 'dictionary_com': {
+            \     'url': 'http://www.dictionary.com/browse/%s',
+            \ },
+            \ 'default': 'dictionary_com',
+            \}
+let g:ref_source_webdict_cmd = "=wwwrenderer#render('%s')"
+
+function! g:ref_source_webdict_sites.dictionary_com.filter(output)
+    let split_horizon = 2
+    let lines = []
+    let split_counter = 0
+    for line in split(a:output, "\n")[90:]
+        let line = substitute(line, "\\s\\+$", "", "")
+        if !empty(line)
+            let split_counter = 0
+            call add(lines, line)
+        elseif split_horizon > split_counter
+            let split_counter = split_counter + 1
+            call add(lines, line)
+        endif
+    endfor
+    return join(lines, "\n")
+endfunction
+
+nnoremap <Space>d :call ref#jump("normal", "webdict")<CR>
+
 " End ref.vim }}}2
 
 " sonictemplate-vim {{{2
