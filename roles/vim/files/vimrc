@@ -7,6 +7,7 @@ set autoindent
 set smartindent
 set ambiwidth=double
 set backupdir=~/.vimbackup
+set undodir=~/.vimundo
 set incsearch
 set hlsearch
 set splitright
