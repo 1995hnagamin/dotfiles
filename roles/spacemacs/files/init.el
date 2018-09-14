@@ -332,6 +332,7 @@ you should place your code here."
 
   (keyboard-translate ?\C-h ?\C-?)
   (global-linum-mode t)
+  (electric-pair-mode 1)
 
   (defun coq-preference ()
     (setq overlay-arrow-string "")
