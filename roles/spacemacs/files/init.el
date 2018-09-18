@@ -43,6 +43,7 @@ values."
      csv
      emacs-lisp
      git
+     haskell
      html
      markdown
      ocaml
