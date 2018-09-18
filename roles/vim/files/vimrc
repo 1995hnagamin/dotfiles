@@ -27,6 +27,7 @@ augroup END
 colorscheme elflord
 
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
+command! FullPath echo expand('%:p')
 
 runtime! ftplugin/man.vim
 
