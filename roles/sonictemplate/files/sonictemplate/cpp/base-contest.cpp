@@ -8,9 +8,9 @@
 #include <queue>
 #include <utility>
 #include <vector>
-#define FOR(i,a,b) for (int i=(a);i<=(b);++i)
-#define RFOR(i,a,b) for (int i=(a);i>=(b);--i)
-#define REP(i,n) for (int i=0, rep_##i##_len=(n);i<(rep_##i##_len);i++)
+#define FOR(i,a,b) for (int i=(a),for_##i##_max=(b);i<=(for_##i##_max);++i)
+#define RFOR(i,a,b) for (int i=(a),rfor_##i##_min=(b);i>=(rfor_##i##_min);--i)
+#define REP(i,n) for (int i=0,rep_##i##_len=(n);i<(rep_##i##_len);++i)
 #define RREP(i,n) for (int i=(n)-1;i>=0;--i)
 constexpr int INF = 100100100;
 
