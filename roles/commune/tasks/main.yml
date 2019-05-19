@@ -2,7 +2,7 @@
 - name: install sonictemplate files
   copy:
     src: "{{ item }}"
-    dest: "~/.vim/sonictemplate/cpp/snip-contest-{{ item | basename }}"
+    dest: "~/.vim/sonictemplate/cpp/snip-{{ item | basename }}"
   with_fileglob:
     - data/*.cpp
     - graph/*.cpp
