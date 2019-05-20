@@ -274,7 +274,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -332,7 +332,6 @@ you should place your code here."
   (load "local-config")
 
   (keyboard-translate ?\C-h ?\C-?)
-  (global-linum-mode t)
   (electric-pair-mode 1)
 
   (defun coq-preference ()
