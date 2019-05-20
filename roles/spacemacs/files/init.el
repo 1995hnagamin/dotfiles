@@ -374,6 +374,12 @@ you should place your code here."
     (require 'skk-study)
     )
 
+  (defun insert-current-time()
+    (interactive)
+    (insert (format-time-string "%Y-%m-%dT%H:%M:%S" (current-time))))
+
+  (define-key global-map "\C-cd" `insert-current-time)
+
   (add-hook 'markdown-mode-hook
             '(lambda () (outline-minor-mode t)))
   (add-hook 'markdown-mode-hook
