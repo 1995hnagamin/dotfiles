@@ -31,6 +31,8 @@ command! FullPath echo expand('%:p')
 
 runtime! ftplugin/man.vim
 
+autocmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
+
 "--- Keymap {{{1
 nnoremap <Space>g :GundoToggle<CR>
 nnoremap <silent> <Space>p :set invpaste<CR>
