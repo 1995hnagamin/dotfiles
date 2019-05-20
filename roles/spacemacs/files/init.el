@@ -351,6 +351,7 @@ you should place your code here."
           (?B . (:foreground "black" :background "yellow"))
           (?C . (:foreground "green"))))
 
+  (setq tramp-default-method "ssh")
 
   (when (eq system-type 'darwin)
     (define-key global-map [?¥] [?\\])
