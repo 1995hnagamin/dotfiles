@@ -274,7 +274,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -332,7 +332,6 @@ you should place your code here."
   (load "local-config")
 
   (keyboard-translate ?\C-h ?\C-?)
-  (global-linum-mode t)
   (electric-pair-mode 1)
 
   (defun coq-preference ()
@@ -352,6 +351,7 @@ you should place your code here."
           (?B . (:foreground "black" :background "yellow"))
           (?C . (:foreground "green"))))
 
+  (setq tramp-default-method "ssh")
 
   (when (eq system-type 'darwin)
     (define-key global-map [?¥] [?\\])
@@ -373,6 +373,12 @@ you should place your code here."
       (setq skk-server-portnum 1178))
     (require 'skk-study)
     )
+
+  (defun insert-current-time()
+    (interactive)
+    (insert (format-time-string "%Y-%m-%dT%H:%M:%S" (current-time))))
+
+  (define-key global-map "\C-cd" `insert-current-time)
 
   (add-hook 'markdown-mode-hook
             '(lambda () (outline-minor-mode t)))

@@ -31,6 +31,8 @@ command! FullPath echo expand('%:p')
 
 runtime! ftplugin/man.vim
 
+autocmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
+
 "--- Keymap {{{1
 nnoremap <Space>g :GundoToggle<CR>
 nnoremap <silent> <Space>p :set invpaste<CR>
@@ -85,12 +87,14 @@ if dein#load_state('~/.vim/dein')
     call dein#add('mattn/wwwrenderer-vim')
     call dein#add('osyo-manga/shabadou.vim')
     call dein#add('osyo-manga/vim-watchdogs')
+    call dein#add('plasticboy/vim-markdown')
     call dein#add('rust-lang/rust.vim')
     call dein#add('rhysd/unite-n3337')
     call dein#add('thinca/vim-quickrun')
     call dein#add('thinca/vim-ref')
     call dein#add('tpope/vim-fugitive')
     call dein#add('tpope/vim-surround')
+    call dein#add('vim-scripts/AnsiEsc.vim')
     call dein#add('vim-scripts/Gundo')
     call dein#add('vim-scripts/mru.vim')
     call dein#add('vim-scripts/project.tar.gz')
