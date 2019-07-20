@@ -65,6 +65,7 @@ values."
    dotspacemacs-additional-packages
    '(
      ddskk
+     howm
      imenu-list
      mew
      pandoc-mode
@@ -340,6 +341,13 @@ you should place your code here."
     (define-key coq-mode-map (kbd "C-c C-^") 'proof-goto-point))
 
   (add-hook 'coq-mode-hook #'coq-preference)
+
+  ; howm
+  (setq howm-menu-lang 'ja)
+  (require 'howm)
+
+  (autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
+
 
   ; org-mode
   (setq org-todo-keywords
