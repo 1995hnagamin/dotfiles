@@ -222,7 +222,8 @@ let g:sonictemplate_vim_template_dir = [
 
 " trailing-whitespace.txt {{{2
 let g:extra_whitespace_ignored_filetypes = [
-            \ 'ref-webdict'
+            \ 'ref-webdict',
+            \ 'ref-rfc'
             \ ]
 " End trailing-whitespace.txt }}}2
 
