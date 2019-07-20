@@ -45,6 +45,7 @@ values."
      git
      haskell
      html
+     latex
      markdown
      ocaml
      org
@@ -381,6 +382,12 @@ you should place your code here."
       (setq skk-server-portnum 1178))
     (require 'skk-study)
     )
+
+  (eval-after-load "smartparens-latex"
+    '(sp-with-modes '(tex-mode plain-tex-mode latex-mode LaTeX-mode)
+       (sp-local-pair "\\left(" "\\right)" :trigger "\\left(" )
+       (sp-local-pair "\\left{" "\\right}" :trigger "\\left{" )
+       ))
 
   (defun insert-current-time()
     (interactive)
