@@ -12,14 +12,9 @@ setopt hist_no_store
 setopt hist_reduce_blanks
 setopt share_history
 
-alias ocaml='rlwrap ocaml'
-
 autoload -U compinit && compinit
 
 # homebrew
 export HOMEBREW_NO_ANALYTICS=1
-
-# Common Lisp
-alias sbcl='rlwrap sbcl'
 
 source ~/.zshrc.local
