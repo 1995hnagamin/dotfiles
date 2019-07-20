@@ -70,6 +70,7 @@ values."
      imenu-list
      mew
      pandoc-mode
+     proof-general
      slime
      )
    ;; A list of packages that cannot be updated.
