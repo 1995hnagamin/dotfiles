@@ -63,10 +63,6 @@ set laststatus=2
 '''
 
 [[plugins]]
-repo = 'JuliaEditorSupport/julia-vim'
-on_ft = ['julia']
-
-[[plugins]]
 repo = 'kana/vim-smartinput'
 on_i = 1
 

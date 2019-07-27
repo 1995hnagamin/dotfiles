@@ -6,6 +6,10 @@ repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
 [[plugins]]
+repo = 'JuliaEditorSupport/julia-vim'
+on_ft = ['julia']
+
+[[plugins]]
 repo = 'jvoorhis/coq.vim'
 on_ft = ['coq']
 
