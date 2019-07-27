@@ -8,7 +8,8 @@ hook_post_source = '''
 " trailing-whitespace.txt {{{1
 let g:extra_whitespace_ignored_filetypes = [
             \ 'ref-webdict',
-            \ 'ref-rfc'
+            \ 'ref-rfc',
+            \ 'unite'
             \ ]
 " End trailing-whitespace.txt }}}1
 '''
