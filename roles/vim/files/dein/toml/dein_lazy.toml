@@ -153,6 +153,20 @@ repo = 'Shougo/unite.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+hook_post_source = '''
+" quickrun.vim {{{1
+
+let g:quickrun_config = {
+            \   'make' : {
+            \       'command'   : 'make',
+            \       'exec' : '%c %o',
+            \       'outputter' : 'error:buffer:quickfix',
+            \       'runner' : 'vimproc',
+            \   },
+            \}
+
+"End quickrun.vim }}}1
+'''
 
 [[plugins]]
 repo = 'thinca/vim-ref'
