@@ -391,7 +391,7 @@ you should place your code here."
   (eval-after-load "smartparens-latex"
     '(sp-with-modes '(tex-mode plain-tex-mode latex-mode LaTeX-mode)
        (sp-local-pair "\\left(" "\\right)" :trigger "\\left(" )
-       (sp-local-pair "\\left{" "\\right}" :trigger "\\left{" )
+       (sp-local-pair  "\\left{" "\\right}" :trigger "\\left{" )
        ))
 
   (defun remove-electric-pair-mode ()
