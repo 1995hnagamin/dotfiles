@@ -390,6 +390,10 @@ you should place your code here."
        (sp-local-pair "\\left{" "\\right}" :trigger "\\left{" )
        ))
 
+  (defun remove-electric-pair-mode ()
+    (electric-pair-mode -1))
+  (add-hook 'LaTeX-mode-hook 'remove-electric-pair-mode)
+
   (defun insert-current-time()
     (interactive)
     (insert (format-time-string "%Y-%m-%dT%H:%M:%S" (current-time))))
