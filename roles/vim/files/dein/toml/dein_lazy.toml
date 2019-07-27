@@ -13,6 +13,10 @@ let g:extra_whitespace_ignored_filetypes = [
 '''
 
 [[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
 repo = 'cohama/vim-hier'
 
 [[plugins]]
@@ -63,8 +67,24 @@ set laststatus=2
 '''
 
 [[plugins]]
+repo = 'JuliaEditorSupport/julia-vim'
+on_ft = ['julia']
+
+[[plugins]]
+repo = 'jvoorhis/coq.vim'
+on_ft = ['coq']
+
+[[plugins]]
+repo = 'kana/vim-filetype-haskell'
+on_ft = ['haskell']
+
+[[plugins]]
 repo = 'kana/vim-smartinput'
 on_i = 1
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
 
 [[plugins]]
 repo = 'Konfekt/FastFold'
@@ -97,6 +117,12 @@ let g:sonictemplate_vim_template_dir = [
 '''
 
 [[plugins]]
+repo = 'mattn/webapi-vim'
+
+[[plugins]]
+repo = 'mattn/wwwrenderer-vim'
+
+[[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
 hook_post_source = '''
 " watchdogs.vim {{{1
@@ -127,6 +153,17 @@ call watchdogs#setup(g:quickrun_config)
 '''
 
 [[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
+
+[[plugins]]
+repo = 'rhysd/unite-n3337'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
 repo = 'Shougo/neocomplete.vim'
 on_i = 1
 hook_post_source = '''
@@ -153,9 +190,18 @@ endif
 '''
 
 [[plugins]]
+repo = 'Shougo/unite-outline'
+
+[[plugins]]
 repo = 'Shougo/unite.vim'
 hook_post_source = '''
 let g:unite_enable_start_insert=1
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+let g:dein#plugin.build = 'make'
 '''
 
 [[plugins]]
