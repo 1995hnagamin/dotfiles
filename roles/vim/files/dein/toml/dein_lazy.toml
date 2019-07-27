@@ -157,6 +157,7 @@ hook_post_source = '''
 let g:quickrun_config['watchdogs_checker/_'] = {
             \   'outputter/quickfix/open_cmd': '',
             \   'hook/echo/enable': 1,
+            \   'hook/copen/enable_exist_data' : 1,
             \   'hook/echo/output_success': 'Watchdog went away.'
             \ }
 
