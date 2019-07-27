@@ -20,9 +20,18 @@ on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'cohama/vim-hier'
+on_cmd = [
+  'HierStart',
+  'HierStop',
+  'HierUpdate',
+  'HierClear'
+]
 
 [[plugins]]
 repo = 'ciaranm/detectindent'
+on_cmd = [
+  'DetectIndent'
+]
 
 [[plugins]]
 repo = 'dannyob/quickfixstatus'
@@ -114,6 +123,7 @@ on_i = 1
 
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
+on_cmd = ['Template']
 hook_post_source = '''
 " sonictemplate-vim {{{2
 let g:sonictemplate_vim_template_dir = [
@@ -132,6 +142,9 @@ on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
+on_cmd = [
+  'WatchdogsRun'
+]
 hook_post_source = '''
 " watchdogs.vim {{{1
 let g:quickrun_config['watchdogs_checker/_'] = {
@@ -204,6 +217,9 @@ repo = 'Shougo/unite-outline'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+on_cmd = [
+  'Unite'
+]
 hook_post_source = '''
 let g:unite_enable_start_insert=1
 '''
