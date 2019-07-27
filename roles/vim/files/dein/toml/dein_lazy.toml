@@ -55,10 +55,10 @@ on_map = [
   '<Plug>(asterisk-gz#)'
 ]
 
-[[plugins]]
-repo = 'JuliaEditorSupport/julia-vim'
-on_ft = ['julia']
-on_event = ['FocusLost', 'CursorHold']
+# [[plugins]]
+# repo = 'JuliaEditorSupport/julia-vim'
+# on_ft = ['julia']
+# on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'jvoorhis/coq.vim'
