@@ -169,32 +169,6 @@ let g:sonictemplate_vim_template_dir = [
 " unite.vim
 let g:unite_enable_start_insert=1
 
-" watchdogs.vim {{{2
-let g:quickrun_config['watchdogs_checker/_'] = {
-            \   'outputter/quickfix/open_cmd': '',
-            \   'hook/echo/enable': 1,
-            \   'hook/echo/output_success': 'Watchdog went away.'
-            \ }
-
-let g:quickrun_config['cpp/watchdogs_checker'] = {
-            \   'type' : 'watchdogs_checker/clang++',
-            \   'cmdopt' : '-std=c++14 -Wall',
-            \ }
-
-let g:watchdogs_check_BufWritePost_enable = 1
-let g:watchdogs_check_BufWritePost_enables = {
-            \   'cpp' : 0
-            \ }
-
-let g:watchdogs_check_CursorHold_enable = 1
-let g:watchdogs_check_CursorHold_enables = {
-            \   'cpp' : 0
-            \ }
-
-call watchdogs#setup(g:quickrun_config)
-
-"End watchdogs.vim }}}2
-
 " vim-asterisk {{{2
 map *  <Plug>(asterisk-z*)
 map #  <Plug>(asterisk-z#)
