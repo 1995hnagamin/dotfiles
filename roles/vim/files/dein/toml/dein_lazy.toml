@@ -31,6 +31,12 @@ on_map = [
 
 [[plugins]]
 repo = 'haya14busa/vim-asterisk'
+on_map = [
+  '<Plug>(asterisk-z*)',
+  '<Plug>(asterisk-z#)',
+  '<Plug>(asterisk-gz*)',
+  '<Plug>(asterisk-gz#)'
+]
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
