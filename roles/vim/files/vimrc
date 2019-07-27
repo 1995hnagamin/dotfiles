@@ -24,7 +24,6 @@ augroup CleanBackGround
     autocmd ColorScheme * highlight ErrorMsg ctermbg=none
     autocmd ColorScheme * highlight WarningMsg ctermbg=none
 augroup END
-colorscheme elflord
 
 command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 command! FullPath echo expand('%:p')
