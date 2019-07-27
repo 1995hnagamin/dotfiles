@@ -154,6 +154,9 @@ endif
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+hook_post_source = '''
+let g:unite_enable_start_insert=1
+'''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
