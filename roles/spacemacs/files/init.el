@@ -383,6 +383,10 @@ you should place your code here."
       (setq skk-server-portnum 1178))
     (require 'skk-study)
     )
+  (setq skk-kuten-touten-alist
+        (cons '(my-en "." . ",")
+              skk-kuten-touten-alist))
+  (setq-default skk-kutouten-type 'my-en)
 
   (eval-after-load "smartparens-latex"
     '(sp-with-modes '(tex-mode plain-tex-mode latex-mode LaTeX-mode)
