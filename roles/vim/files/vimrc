@@ -83,48 +83,6 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 " End incsearch.vim }}}2
 
-" ref.vim {{{2
-let g:ref_man_cmd = "man -P cat"
-let g:ref_man_lang = "C"
-
-let g:ref_source_webdict_sites = {
-            \ 'dictionary_com': {
-            \     'url': 'http://www.dictionary.com/browse/%s',
-            \ },
-            \ 'wiktionary': {
-            \   'url': 'http://en.wiktionary.org/wiki/%s',
-            \   'keyword_encoding': 'utf-8',
-            \   'cache': 1,
-            \ },
-            \ 'default': 'dictionary_com',
-            \}
-let g:ref_source_webdict_cmd = "=wwwrenderer#render('%s')"
-
-function! g:ref_source_webdict_sites.dictionary_com.filter(output)
-    let split_horizon = 2
-    let lines = []
-    let split_counter = 0
-    for line in split(a:output, "\n")[90:]
-        let line = substitute(line, "\\s\\+$", "", "")
-        if !empty(line)
-            let split_counter = 0
-            call add(lines, line)
-        elseif split_horizon > split_counter
-            let split_counter = split_counter + 1
-            call add(lines, line)
-        endif
-    endfor
-    return join(lines, "\n")
-endfunction
-
-function! g:ref_source_webdict_sites.wiktionary.filter(output)
-  return join(split(a:output, "\n")[18 :], "\n")
-endfunction
-
-nnoremap <Space>d :call ref#jump("normal", "webdict")<CR>
-
-" End ref.vim }}}2
-
 " sonictemplate-vim {{{2
 let g:sonictemplate_vim_template_dir = [
             \ '~/.vim/sonictemplate'
