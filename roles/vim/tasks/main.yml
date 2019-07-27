@@ -11,3 +11,7 @@
   copy:
     src: after/ftplugin
     dest:  ~/.vim/after/
+- name: install dein/toml
+  copy:
+    src: dein/toml
+    dest:  ~/.vim/dein/
