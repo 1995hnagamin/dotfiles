@@ -90,9 +90,7 @@ on_map = [
   '<Plug>(yankround-p)',
   '<Plug>(yankround-P)',
   '<Plug>(yankround-prev)',
-  '<Plug>(yankround-next)',
-  '<Plug>(yankround-gp)',
-  '<Plug>(yankround-p)'
+  '<Plug>(yankround-next)'
 ]
 
 [[plugins]]
