@@ -88,6 +88,13 @@ on_i = 1
 
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
+hook_post_source = '''
+" sonictemplate-vim {{{2
+let g:sonictemplate_vim_template_dir = [
+            \ '~/.vim/sonictemplate'
+            \]
+"End sonictemplate-vim }}}2
+'''
 
 [[plugins]]
 repo = 'osyo-manga/vim-watchdogs'

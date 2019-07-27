@@ -82,12 +82,6 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 " End incsearch.vim }}}2
 
-" sonictemplate-vim {{{2
-let g:sonictemplate_vim_template_dir = [
-            \ '~/.vim/sonictemplate'
-            \]
-"End sonictemplate-vim }}}2
-
 " unite.vim
 let g:unite_enable_start_insert=1
 
