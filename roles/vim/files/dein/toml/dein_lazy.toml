@@ -231,6 +231,7 @@ repo = 'vim-scripts/mru.vim'
 
 [[plugins]]
 repo = 'vim-scripts/project.tar.gz'
+on_cmd = ['Project']
 
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
