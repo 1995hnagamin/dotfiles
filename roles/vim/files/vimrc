@@ -185,13 +185,6 @@ let g:sonictemplate_vim_template_dir = [
             \]
 "End sonictemplate-vim }}}2
 
-" trailing-whitespace.txt {{{2
-let g:extra_whitespace_ignored_filetypes = [
-            \ 'ref-webdict',
-            \ 'ref-rfc'
-            \ ]
-" End trailing-whitespace.txt }}}2
-
 " unite.vim
 let g:unite_enable_start_insert=1
 

@@ -3,6 +3,14 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
+hook_post_source = '''
+" trailing-whitespace.txt {{{1
+let g:extra_whitespace_ignored_filetypes = [
+            \ 'ref-webdict',
+            \ 'ref-rfc'
+            \ ]
+" End trailing-whitespace.txt }}}1
+'''
 
 [[plugins]]
 repo = 'cohama/vim-hier'
