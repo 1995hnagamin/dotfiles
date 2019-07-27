@@ -27,20 +27,8 @@ repo = 'JuliaEditorSupport/julia-vim'
 on_ft = ['julia']
 
 [[plugins]]
-repo = 'jvoorhis/coq.vim'
-on_ft = ['coq']
-
-[[plugins]]
-repo = 'kana/vim-filetype-haskell'
-on_ft = ['haskell']
-
-[[plugins]]
 repo = 'kana/vim-smartinput'
 on_i = 1
-
-[[plugins]]
-repo = 'kchmck/vim-coffee-script'
-on_ft = ['coffee']
 
 [[plugins]]
 repo = 'Konfekt/FastFold'
@@ -56,33 +44,10 @@ on_i = 1
 repo = 'mattn/sonictemplate-vim'
 
 [[plugins]]
-repo = 'mattn/webapi-vim'
-
-[[plugins]]
-repo = 'mattn/wwwrenderer-vim'
-
-[[plugins]]
-repo = 'osyo-manga/shabadou.vim'
-
-[[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
 
 [[plugins]]
-repo = 'plasticboy/vim-markdown'
-on_ft = ['markdown']
-
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = ['rust']
-
-[[plugins]]
-repo = 'rhysd/unite-n3337'
-
-[[plugins]]
 repo = 'Shougo/neocomplete.vim'
-
-[[plugins]]
-repo = 'Shougo/unite-outline'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
