@@ -173,6 +173,7 @@ on_event = ['FocusLost', 'CursorHold']
 [[plugins]]
 repo = 'rhysd/unite-n3337'
 depends = ['unite.vim']
+on_ft = ['cpp']
 on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
