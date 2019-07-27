@@ -83,25 +83,6 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 " End incsearch.vim }}}2
 
-" lightline {{{2
-let g:lightline = {
-            \ 'colorscheme': 'wombat',
-            \ 'active': {
-            \   'left': [ ['mode', 'paste'],
-            \             ['readonly'] ]
-            \ },
-            \ 'component': {
-            \   'readonly': '%{&readonly?"RO":""}',
-            \ },
-            \ 'component_visible_condition': {
-            \   'readonly': '(&filetype!="help"&& &readonly)',
-            \ },
-            \ 'separator': { 'left':'','right':'' },
-            \ 'subseparator': { 'left':'','right':'' },
-            \ }
-set laststatus=2
-" End lightline }}}2
-
 " neocomplete {{{2
 if has('lua')
     let g:neocomplete#enable_at_startup = 1

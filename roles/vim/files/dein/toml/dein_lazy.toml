@@ -40,6 +40,27 @@ on_map = [
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+on_event = ['VimEnter']
+hook_add = '''
+" lightline {{{1
+let g:lightline = {
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+            \   'left': [ ['mode', 'paste'],
+            \             ['readonly'] ]
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&readonly?"RO":""}',
+            \ },
+            \ 'component_visible_condition': {
+            \   'readonly': '(&filetype!="help"&& &readonly)',
+            \ },
+            \ 'separator': { 'left':'','right':'' },
+            \ 'subseparator': { 'left':'','right':'' },
+            \ }
+set laststatus=2
+" End lightline }}}1
+'''
 
 [[plugins]]
 repo = 'JuliaEditorSupport/julia-vim'
