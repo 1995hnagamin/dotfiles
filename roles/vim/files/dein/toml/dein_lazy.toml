@@ -23,6 +23,11 @@ repo = 'dannyob/quickfixstatus'
 
 [[plugins]]
 repo = 'haya14busa/incsearch.vim'
+on_map = [
+  '<Plug>(incsearch-forward)',
+  '<Plug>(incsearch-backward)',
+  '<Plug>(incsearch-stay)'
+]
 
 [[plugins]]
 repo = 'haya14busa/vim-asterisk'
