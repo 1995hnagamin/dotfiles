@@ -51,18 +51,27 @@ endfor
 "--- Plugin {{{1
 
 "dein Scripts {{{2
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+if &compatible
+    set nocompatible
+endif
+let s:dein_dir = $HOME . '/.vim/dein'
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let &runtimepath = s:dein_repo_dir . ',' . &runtimepath
 
-if dein#load_state('~/.vim/dein')
-    call dein#begin(expand('~/.vim/dein'))
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
 
-    let s:toml_dir = $HOME . '/.vim/dein/toml'
+    let s:toml_dir = s:dein_dir . '/toml'
     let s:toml = s:toml_dir . '/dein.toml'
     let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
     call dein#load_toml(s:toml, {'lazy': 0})
-    call dein#load_toml(s:toml_dir . '/local.toml', {'lazy': 0})
     call dein#load_toml(s:lazy_toml, {'lazy': 1})
-    call dein#load_toml(s:toml_dir . '/local_lazy.toml', {'lazy': 1})
+
+    let s:loc_toml = s:toml_dir . '/local.toml'
+    let s:loc_lazy_toml = s:toml_dir . '/local_lazy.toml'
+    call dein#load_toml(s:loc_toml, {'lazy': 0})
+    call dein#load_toml(s:loc_lazy_toml, {'lazy': 1})
+    " autocmd VimEnter * call dein#call_hook('post_source')
 
     " Required:
     call dein#end()
