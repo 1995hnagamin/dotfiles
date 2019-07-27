@@ -75,6 +75,16 @@ repo = 'Konfekt/FastFold'
 
 [[plugins]]
 repo = 'LeafCage/yankround.vim'
+on_map = [
+  '<Plug>(yankround-gp)',
+  '<Plug>(yankround-gP)',
+  '<Plug>(yankround-p)',
+  '<Plug>(yankround-P)',
+  '<Plug>(yankround-prev)',
+  '<Plug>(yankround-next)',
+  '<Plug>(yankround-gp)',
+  '<Plug>(yankround-p)'
+]
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
