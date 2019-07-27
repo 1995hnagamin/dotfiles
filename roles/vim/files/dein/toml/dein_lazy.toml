@@ -125,6 +125,7 @@ call watchdogs#setup(g:quickrun_config)
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
+on_i = 1
 hook_post_source = '''
 " neocomplete {{{2
 if has('lua')
