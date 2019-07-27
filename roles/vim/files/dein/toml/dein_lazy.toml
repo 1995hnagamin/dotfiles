@@ -274,6 +274,10 @@ on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'vim-scripts/AnsiEsc.vim'
+on_cmd = [
+  'AnsiEsc',
+  'AnsiEsc!'
+]
 
 [[plugins]]
 repo = 'vim-scripts/Gundo'
