@@ -43,5 +43,5 @@ repo = 'Shougo/unite-outline'
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 hook_post_update = '''
-  let g:dein#plugin.build = 'make'
+let g:dein#plugin.build = 'make'
 '''
