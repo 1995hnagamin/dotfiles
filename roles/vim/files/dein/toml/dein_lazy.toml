@@ -96,6 +96,11 @@ on_map = [
 ]
 
 [[plugins]]
+repo = 'def-lkb/ocp-indent-vim'
+on_ft = ['ocaml']
+on_i = 1
+
+[[plugins]]
 repo = 'mattn/emmet-vim'
 on_i = 1
 
