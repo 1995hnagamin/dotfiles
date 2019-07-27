@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -169,6 +170,7 @@ on_event = ['FocusLost', 'CursorHold']
 [[plugins]]
 repo = 'rhysd/unite-n3337'
 depends = ['unite.vim']
+on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
@@ -177,6 +179,7 @@ on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'Shougo/unite-outline'
+on_event = ['FocusLost', 'CursorHold']
 depends = ['unite.vim']
 
 [[plugins]]
@@ -259,6 +262,7 @@ nnoremap <Space>d :call ref#jump("normal", "webdict")<CR>
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -269,6 +273,7 @@ repo = 'vim-scripts/AnsiEsc.vim'
 
 [[plugins]]
 repo = 'vim-scripts/Gundo'
+on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'vim-scripts/mru.vim'
@@ -279,4 +284,5 @@ on_cmd = ['Project']
 
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
+on_event = ['FocusLost', 'CursorHold']
 
