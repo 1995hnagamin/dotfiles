@@ -48,6 +48,3 @@ let g:lightline = {
 set laststatus=2
 " End lightline }}}1
 '''
-
-[[plugins]]
-repo = 'osyo-manga/shabadou.vim'

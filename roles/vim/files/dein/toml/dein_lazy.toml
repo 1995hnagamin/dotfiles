@@ -118,6 +118,10 @@ repo = 'mattn/wwwrenderer-vim'
 on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
+repo = 'osyo-manga/shabadou.vim'
+on_event = ['FocusLost', 'CursorHold']
+
+[[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
 depends = [
   'vim-quickrun',
