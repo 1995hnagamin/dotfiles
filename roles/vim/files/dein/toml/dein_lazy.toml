@@ -30,6 +30,14 @@ on_cmd = [
 ]
 
 [[plugins]]
+repo = 'cohama/vim-smartinput-endwise'
+depends = ['smartinput']
+on_i = 1
+hook_post_source = '''
+call smartinput_endwise#define_default_rules()
+'''
+
+[[plugins]]
 repo = 'ciaranm/detectindent'
 on_cmd = [
   'DetectIndent'
