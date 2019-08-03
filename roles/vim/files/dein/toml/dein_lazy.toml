@@ -81,6 +81,15 @@ on_event = ['FocusLost', 'CursorHold']
 [[plugins]]
 repo = 'kana/vim-smartinput'
 on_i = 1
+# https://rhysd.hatenablog.com/entry/20121017/1350444269
+hook_post_source = '''
+call smartinput#define_rule({
+            \ 'at'      : '\%(\<struct\>\|\<class\>\|\<enum\>\)\s*\w\+.*\%#',
+            \ 'char'    : '{',
+            \ 'input'   : '{};<Left><Left>',
+            \ 'filetype': ['cpp'],
+            \ })
+'''
 
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
