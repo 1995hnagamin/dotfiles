@@ -89,6 +89,12 @@ call smartinput#define_rule({
             \ 'input'   : '{};<Left><Left>',
             \ 'filetype': ['cpp'],
             \ })
+call smartinput#define_rule({
+            \ 'at'      : '\%#',
+            \ 'char'    : "'",
+            \ 'input'   : "'",
+            \ 'filetype': ['ocaml', 'sml'],
+            \ })
 '''
 
 [[plugins]]
