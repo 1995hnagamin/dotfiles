@@ -1,9 +1,7 @@
-class UnionFindTree {
+class union_find_tree {
   public:
-    explicit UnionFindTree(size_t n): par(n), rank(n, 0) {
-      for (size_t i = 0; i < n; ++i) {
-        par[i] = i;
-      }
+    explicit union_find_tree(size_t n): par(n), rank(n, 0) {
+      for (size_t i = 0; i < n; ++i) { par[i] = i; }
     }
 
     size_t find(size_t i) {
@@ -15,15 +13,14 @@ class UnionFindTree {
     }
 
     void unite(size_t i, size_t j) {
-      i = find(i);
-      j = find(j);
-      if (i == j) return;
+      i = find(i), j = find(j);
+      if (i == j) { return; }
 
       if (rank[i] < rank[j]) {
         par[i] = j;
       } else {
         par[j] = i;
-        if (rank[i] = rank[j]) rank[i]++;
+        if (rank[i] = rank[j]) { rank[i]++; }
       }
     }
 

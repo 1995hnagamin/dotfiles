@@ -1,11 +1,13 @@
+namespace { // thrifty segment tree
+
 template<typename T, typename FnT, typename IndexT = int>
-class ThriftySegmentTree {
+class thrifty_segment_tree {
   public:
-    struct Node {
+    struct node {
       T v;
       IndexT lp, rp; // [l, r)
-      std::unique_ptr<Node> lc, rc;
-      Node(T v_, IndexT lp_, IndexT rp_):
+      std::unique_ptr<node> lc, rc;
+      node(T v_, IndexT lp_, IndexT rp_):
         v(v_), lp(lp_), rp(rp_), lc(), rc() {}
       void update(FnT const &append, T const &unit, IndexT k, T x) {
         if (rp <= lp + 1 && lp == k) {
@@ -14,10 +16,10 @@ class ThriftySegmentTree {
         }
         const auto mid = (lp + rp) / 2;
         if (k < mid) {
-          if (!lc) lc = std::make_unique<Node>(unit, lp, mid);
+          if (!lc) { lc = std::make_unique<node>(unit, lp, mid); }
           lc->update(append, unit, k, x);
         } else {
-          if (!rc) rc = std::make_unique<Node>(unit, mid, rp);
+          if (!rc) { rc = std::make_unique<node>(unit, mid, rp); }
           rc->update(append, unit, k, x);
         }
         v = m_append(append, unit);
@@ -43,11 +45,12 @@ class ThriftySegmentTree {
         }
       }
     };
-    explicit ThriftySegmentTree(FnT const &app, T const &un, IndexT n):
-      append(app), unit(un), N(1 << log2(n)),
-      root(std::make_unique<Node>(un, 0, N)) {
+    explicit thrifty_segment_tree(FnT const &app, T const &un, IndexT n):
+      append(app), unit(un), N(p2cl2(N)),
+      root(std::make_unique<node>(un, 0, N)) {
     }
-    ~ThriftySegmentTree() = default;
+    thrifty_segment_tree(thrifty_segment_tree &&) = default;
+    ~thrifty_segment_tree() = default;
     void update(IndexT k, T x) {
       root->update(append, unit, k, x);
     }
@@ -64,11 +67,20 @@ class ThriftySegmentTree {
     FnT const append;
     T const unit;
     size_t const N;
-    std::unique_ptr<Node> root;
+    std::unique_ptr<node> root;
 
-    static size_t log2(size_t n) {
-      size_t p = 1;
-      while ((1 << p) < n) { ++p; }
-      return p;
+    static IndexT p2cl2(IndexT n) {
+      IndexT N = 1;
+      while (N < n) { N *= 2; }
+      return N;
     }
 };
+
+template<typename T, typename FnT, typename IndexT = int>
+thrifty_segment_tree<T, typename std::decay<FnT>::type, IndexT>
+make_thrifty_segment_tree(FnT const &app, T const &un, IndexT n) {
+  using F = typename std::decay<FnT>::type;
+  return thrifty_segment_tree<T, F, IndexT>(app, un, n);
+}
+
+} // namespace
