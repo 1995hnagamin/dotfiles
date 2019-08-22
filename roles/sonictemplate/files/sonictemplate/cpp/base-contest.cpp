@@ -8,6 +8,8 @@
 #include <map>
 #include <numeric>
 #include <queue>
+#include <sstream>
+#include <stack>
 #include <string>
 #include <utility>
 #include <vector>
@@ -29,16 +31,21 @@ void chmax(T &x, T y) {
 }
 
 template<typename T>
+__attribute__((unused))
 const auto minimum = static_cast<T const &(*)(T const &, T const &)>(std::min);
 
 template<typename T>
+__attribute__((unused))
 const auto maximum = static_cast<T const &(*)(T const &, T const &)>(std::max);
 
 template<typename T>
+__attribute__((unused))
 T constexpr infty = std::numeric_limits<T>::max / 3;
 template<>
+__attribute__((unused))
 auto constexpr infty<int> = 1'100'100'100;
 template<>
+__attribute__((unused))
 auto constexpr infty<long long int> = 100'500'400'300'200'100LL;
 
 using lli = long long int;
