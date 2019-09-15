@@ -40,6 +40,9 @@ __attribute__((unused))
 const auto maximum = static_cast<T const &(*)(T const &, T const &)>(std::max);
 
 template<typename T>
+int cmp3(T lhs, T rhs) { return (lhs == rhs) ? 0 : (lhs > rhs) ? 1 : -1; }
+
+template<typename T>
 __attribute__((unused))
 T constexpr infty = std::numeric_limits<T>::max / 3;
 template<>
