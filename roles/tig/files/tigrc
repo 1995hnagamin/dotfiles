@@ -12,3 +12,5 @@ bind generic H view-help
 bind generic g move-first-line
 bind generic G none
 bind generic G move-last-line
+bind main ! !@hub browse -- commit/%(commit)
+bind diff ! !@hub browse -- commit/%(commit)
