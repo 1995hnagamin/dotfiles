@@ -313,10 +313,6 @@ on_cmd = [
 ]
 
 [[plugins]]
-repo = 'vim-scripts/Gundo'
-on_event = ['FocusLost', 'CursorHold']
-
-[[plugins]]
 repo = 'vim-scripts/mru.vim'
 
 [[plugins]]
@@ -327,3 +323,6 @@ on_cmd = ['Project']
 repo = 'vim-scripts/vim-auto-save'
 on_event = ['FocusLost', 'CursorHold']
 
+[[plugins]]
+repo = 'simnalamburt/vim-mundo'
+on_event = ['FocusLost', 'CursorHold']

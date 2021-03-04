@@ -31,8 +31,8 @@ command! FullPath echo expand('%:p')
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 "--- Keymap {{{1
-nnoremap <Space>g :GundoToggle<CR>
 nnoremap <silent> <Space>p :set invpaste<CR>
+nnoremap <Space>m :MundoToggle<CR>
 nnoremap <Space>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <Space>Tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <Space>Uf :Unite file<CR>
