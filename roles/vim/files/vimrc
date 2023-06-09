@@ -25,19 +25,12 @@ augroup CleanBackGround
     autocmd ColorScheme * highlight WarningMsg ctermbg=none
 augroup END
 
-command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
 command! FullPath echo expand('%:p')
 
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 "--- Keymap {{{1
-nnoremap <silent> <Space>p :set invpaste<CR>
-nnoremap <Space>m :MundoToggle<CR>
-nnoremap <Space>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-nnoremap <Space>Tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap <Space>Uf :Unite file<CR>
 nnoremap <ESC><ESC> :noh<CR>
-nnoremap <silent> <Space>o :execute "normal zczO"<CR>
 
 " Tab pages
 nmap [Tag] <Nop>
@@ -48,66 +41,37 @@ endfor
 
 "End Keymap }}}1
 
-"--- Plugin {{{1
+"--- vim-plug {{{1
+call plug#begin()
+Plug 'itchyny/lightline.vim'
+Plug 'mattn/vim-sonictemplate'
+call plug#end()
+" End vim-plug }}}1
 
-"dein Scripts {{{2
-if &compatible
-    set nocompatible
-endif
-let s:dein_dir = $HOME . '/.vim/dein'
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-let &runtimepath = s:dein_repo_dir . ',' . &runtimepath
+" lightline {{{1
+let g:lightline = {
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+            \   'left': [ ['mode', 'paste'],
+            \             ['readonly'] ]
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&readonly?"RO":""}',
+            \ },
+            \ 'component_visible_condition': {
+            \   'readonly': '(&filetype!="help"&& &readonly)',
+            \ },
+            \ 'separator': { 'left':'','right':'' },
+            \ 'subseparator': { 'left':'','right':'' },
+            \ }
+set laststatus=2
+" End lightline }}}1
 
-if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
-
-    let s:toml_dir = s:dein_dir . '/toml'
-    let s:toml = s:toml_dir . '/dein.toml'
-    let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
-    call dein#load_toml(s:toml, {'lazy': 0})
-    call dein#load_toml(s:lazy_toml, {'lazy': 1})
-
-    let s:loc_toml = s:toml_dir . '/local.toml'
-    let s:loc_lazy_toml = s:toml_dir . '/local_lazy.toml'
-    call dein#load_toml(s:loc_toml, {'lazy': 0})
-    call dein#load_toml(s:loc_lazy_toml, {'lazy': 1})
-    " autocmd VimEnter * call dein#call_hook('post_source')
-
-    " Required:
-    call dein#end()
-    call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-"End dein Scripts }}}2
-
-" incsearch.vim {{{2
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-" End incsearch.vim }}}2
-
-" vim-asterisk {{{2
-map *  <Plug>(asterisk-z*)
-map #  <Plug>(asterisk-z#)
-map g* <Plug>(asterisk-gz*)
-map g# <Plug>(asterisk-gz#)
-" End vim-asterisk }}}2
-
-" yankround.vim {{{2
-nmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap yp <Plug>(yankround-prev)
-nmap yn <Plug>(yankround-next)
-xmap gp <Plug>(yankround-gp)
-xmap p <Plug>(yankround-p)
-" End yankround.vim }}}2
-
-"End Plugin }}}1
+" sonictemplate-vim {{{1
+let g:sonictemplate_vim_template_dir = [
+            \ '~/.vim/sonictemplate'
+            \]
+"End sonictemplate-vim }}}1
 
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
